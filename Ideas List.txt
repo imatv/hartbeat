@@ -60,3 +60,7 @@ intense moments/horror elements
 need some type of upgrading system for weaponry/equipment (more attachments/perks damage modifiers)
 using riots to player's advantage
 masks ingame model after ww1
+gear cities, load up different cities/instances
+hierarchy level depends on height in city. slums are bottom.
+start high level, jumps off gear for faking death
+flashback storyline?
