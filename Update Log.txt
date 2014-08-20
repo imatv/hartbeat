@@ -1,5 +1,13 @@
 TODO: Plan workload and begin!
 TODO: Graphical Logo design
+TODO: Everyone get Blender (3D Graphics Creation software)
+TODO: Everyone get Git and Github setup.
+TODO: Everyone get UDK (if possible).
+
+Currently...
+Ethan is handling the heartrate monitor (PulseSensor).
+Jeremy is working on 3D Graphics creation (Blender).
+Alvin is working on map creation in UDK.
 ---------------------------------------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------------------------------------
