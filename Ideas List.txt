@@ -64,3 +64,4 @@ gear cities, load up different cities/instances
 hierarchy level depends on height in city. slums are bottom.
 start high level, jumps off gear for faking death
 flashback storyline?
+loot from people or ammo from opponents/currency to buy addons?
