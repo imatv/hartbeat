@@ -9,6 +9,10 @@ Ethan is handling the heartrate monitor (PulseSensor).
 Jeremy is working on 3D Graphics creation (Blender).
 Alvin is working on map creation in UDK.
 ---------------------------------------------------------------------------------------------------------------------
+8/21/2014 3:49 AM PST (PUSHED TO GITHUB)
+
+Template Map (UDK Tutorial #5) added. Terrain Editor.
+---------------------------------------------------------------------------------------------------------------------
 8/21/2014 1:30 AM PST (PUSHED TO GITHUB)
 
 Updated initial model of basic rifle to include bolt-action reload animation.
@@ -30,12 +34,11 @@ Added the program file for the arduino and Pulse Sensor. DO NOT CHANGE FILE NAME
 ---------------------------------------------------------------------------------------------------------------------
 8/20/2014 8:51 PM PST (PUSHED TO GITHUB)
 
-Template Maps (UDK Tutorial #3 and #4) added.
-See past link.
+Template Maps (UDK Tutorial #3 and #4) added. Materials. Static Meshes.
 ---------------------------------------------------------------------------------------------------------------------
 8/20/2014 6:08 PM PST (PUSHED TO GITHUB)
 
-Template Map (UDK Tutorial #2 [Michigan State: Brainspace Showcase]) added.
+Template Map (UDK Tutorial #2 [Michigan State: Brainspace Showcase]) added. Builder Brushes.
 ^Link: https://www.youtube.com/watch?v=PIfy_k-s7k4
 ---------------------------------------------------------------------------------------------------------------------
 8/19/2014 3:57 AM PST (PUSHED TO GITHUB)
