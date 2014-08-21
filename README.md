@@ -14,8 +14,8 @@ Technologies Planned:
 
 Texture Libraries:
     (Note: Any texture used is packaged along with the models/maps that include it.)
-    http://opengameart.org/textures/all
-    http://www.cgtextures.com/
+- http://opengameart.org/textures/all
+- http://www.cgtextures.com/
     
 Special Thanks to Matthew at Michigan State University for his tutorials on UDK Game Development.
-    https://www.youtube.com/watch?v=vgSUbmKOX24
+- https://www.youtube.com/watch?v=vgSUbmKOX24
