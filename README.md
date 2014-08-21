@@ -4,11 +4,13 @@ Hartbeat
 Original concept by Ethan Harte, Alvin Vuong, and Jeremy Rotman.
 Idea for Alpha Game Jam.
 
-Technologies Planned:
-- UDK
-- Blender (free and open source 3D animation suite: http://www.blender.org/ )
+Technologies Used:
+- UDK (3D game engine and professional toolset for game development: https://www.unrealengine.com/products/udk/ )
+- Blender (open-source 3D animation suite: http://www.blender.org/ )
 - Arduino (open-source physical computing platform: http://arduino.cc/ )
-- Heartrate monitor for spread in FPS. (Made by PulseSensor: http://pulsesensor.myshopify.com/ )
+- PulseSensor (Arduino heart rate monitor: http://pulsesensor.myshopify.com/ )
+
+Technologies Planned:
 - Breath monitor for breathing-related mechanics (???)
 - Emotiv EPOC for ??? (neuroheadset & SDK provided by Emotiv: http://emotiv.com/ )
 
