@@ -2,3 +2,5 @@ Free Game Texture Library:
     http://opengameart.org/textures/all
 OpenGL Tutorial:
     http://nehe.gamedev.net/tutorial/creating_an_opengl_window_(win32)/13001/
+Pulse Sensor Download Archive:
+    https://code.google.com/p/pulse-sensor/downloads/list

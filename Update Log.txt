@@ -9,6 +9,13 @@ Ethan is handling the heartrate monitor (PulseSensor).
 Jeremy is working on 3D Graphics creation (Blender).
 Alvin is working on map creation in UDK.
 ---------------------------------------------------------------------------------------------------------------------
+8/20/2014 8:55 PM PST (PUSHED TO GITHUB)
+
+Added a link to the useful links text file.
+Added the program file for the arduino and Pulse Sensor. DO NOT CHANGE FILE NAME!
+^Download: http://pulsesensor.myshopify.com/blogs/news/6877119-announcing-code-version-1-1-its-out-of-beta
+^Arduino Download: http://arduino.cc/en/main/software
+---------------------------------------------------------------------------------------------------------------------
 8/20/2014 8:51 PM PST (PUSHED TO GITHUB)
 
 Template Maps (UDK Tutorial #3 and #4) added.
