@@ -68,3 +68,6 @@ flashback storyline?
 loot from people or ammo from opponents/currency to buy addons?
 responsive ai to dead enemies
 scope lens magnification toggle (eye doctor style)
+under the cogs is where any troublemakers are sent
+basically, it’s a huge battleground of criminals, sort of in factions
+maybe add some people who didn’t deserve to be sent down there (people that will help you)

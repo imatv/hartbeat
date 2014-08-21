@@ -9,9 +9,17 @@ Ethan is handling the heartrate monitor (PulseSensor).
 Jeremy is working on 3D Graphics creation (Blender).
 Alvin is working on map creation in UDK.
 ---------------------------------------------------------------------------------------------------------------------
+8/21/2014 1:30 AM PST (PUSHED TO GITHUB)
+
+Updated initial model of basic rifle to include bolt-action reload animation.
+---------------------------------------------------------------------------------------------------------------------
+8/20/2014 10:00 PM PST (PUSHED TO GITHUB)
+
+Added Folder for Models and Textures as well as an initial basic bolt-action rifle model, along with the textures it uses.
+---------------------------------------------------------------------------------------------------------------------
 8/20/2014 9:30 PM PST (PUSHED TO GITHUB)
 
-Udpated README to include links to used software/hardware.
+Updated README to include links to used software/hardware.
 ---------------------------------------------------------------------------------------------------------------------
 8/20/2014 8:55 PM PST (PUSHED TO GITHUB)
 
