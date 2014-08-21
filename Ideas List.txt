@@ -66,3 +66,4 @@ start high level, jumps off gear for faking death
 flashback storyline?
 loot from people or ammo from opponents/currency to buy addons?
 responsive ai to dead enemies
+scope lens magnification toggle (eye doctor style)

@@ -9,7 +9,10 @@ Ethan is handling the heartrate monitor (PulseSensor).
 Jeremy is working on 3D Graphics creation (Blender).
 Alvin is working on map creation in UDK.
 ---------------------------------------------------------------------------------------------------------------------
+8/20/2014 6:08 PS PST (PUSHED TO GITHUB)
 
+Template Map (UDK Tutorial #2 [Michigan State: Brainspace Showcase]) added.
+^Link: https://www.youtube.com/watch?v=PIfy_k-s7k4
 ---------------------------------------------------------------------------------------------------------------------
 8/19/2014 3:57 AM PST (PUSHED TO GITHUB)
 
