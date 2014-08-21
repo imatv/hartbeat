@@ -9,6 +9,10 @@ Ethan is handling the heartrate monitor (PulseSensor).
 Jeremy is working on 3D Graphics creation (Blender).
 Alvin is working on map creation in UDK.
 ---------------------------------------------------------------------------------------------------------------------
+8/20/2014 9:30 PM PST (PUSHED TO GITHUB)
+
+Udpated README to include links to used software/hardware.
+---------------------------------------------------------------------------------------------------------------------
 8/20/2014 8:55 PM PST (PUSHED TO GITHUB)
 
 Added a link to the useful links text file.
