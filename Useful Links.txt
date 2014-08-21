@@ -1,6 +1,12 @@
-Free Game Texture Library:
+Free Game Texture Libraries:
     http://opengameart.org/textures/all
+    http://www.cgtextures.com/
+	(This one make sure images are packed together with the models)
 OpenGL Tutorial:
     http://nehe.gamedev.net/tutorial/creating_an_opengl_window_(win32)/13001/
 Pulse Sensor Download Archive:
     https://code.google.com/p/pulse-sensor/downloads/list
+UDK Tutorial:
+    https://www.youtube.com/watch?v=vgSUbmKOX24
+Arduino Software:
+    http://arduino.cc/en/main/software
