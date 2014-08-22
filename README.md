@@ -1,8 +1,7 @@
 Hartbeat
 ========
 
-Original concept by Ethan Harte, Alvin Vuong, and Jeremy Rotman.
-
+Original concept by Ethan Harte, Alvin Vuong, and Jeremy Rotman.  
 Idea for Alpha Game Jam.
 
 Technologies Used:
@@ -15,9 +14,8 @@ Technologies Planned:
 - Breath monitor for breathing-related mechanics (???)
 - Emotiv EPOC for ??? (neuroheadset & SDK provided by Emotiv: http://emotiv.com/ )
 
-Texture Libraries:
-
-    <p>(Note: Any texture used is packaged along with the models/maps that include it.)</p>
+Texture Libraries:  
+*(Note: Any texture used is packaged along with the models/maps that include it.)*
 - http://opengameart.org/textures/all
 - http://www.cgtextures.com/
     
