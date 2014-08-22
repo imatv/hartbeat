@@ -4,10 +4,15 @@ TODO: Everyone get Blender (3D Graphics Creation software)
 TODO: Everyone get Git and Github setup.
 TODO: Everyone get UDK (if possible).
 
+Note: UnrealScript is the way to go for changing game logic in UDK.
+    ^Probably for the heartrate/breathing functionality.
+Note: Kismet is used for level scripting.
+    ^For map/level environment functionality. (Like opening doors)
+
 Currently...
-Ethan is handling the heartrate monitor (PulseSensor).
-Jeremy is working on 3D Graphics creation (Blender).
-Alvin is working on map creation in UDK.
+- Ethan is handling the heartrate monitor (PulseSensor).
+- Jeremy is working on 3D Graphics creation (Blender).
+- Alvin is working on map creation in UDK.
 ---------------------------------------------------------------------------------------------------------------------
 8/21/2014 3:49 AM PST (PUSHED TO GITHUB)
 
