@@ -2,10 +2,11 @@ Hartbeat
 ========
 
 Original concept by Ethan Harte, Alvin Vuong, and Jeremy Rotman.
+
 Idea for Alpha Game Jam.
 
 Technologies Used:
-- UDK (3D game engine and professional toolset for game development: https://www.unrealengine.com/products/udk/ )
+- UDK (professional 3D engine/toolset for game development: https://www.udk.com/ )
 - Blender (open-source 3D animation suite: http://www.blender.org/ )
 - Arduino (open-source physical computing platform: http://arduino.cc/ )
 - PulseSensor (Arduino heart rate monitor: http://pulsesensor.myshopify.com/ )
@@ -15,7 +16,8 @@ Technologies Planned:
 - Emotiv EPOC for ??? (neuroheadset & SDK provided by Emotiv: http://emotiv.com/ )
 
 Texture Libraries:
-    (Note: Any texture used is packaged along with the models/maps that include it.)
+
+    <p>(Note: Any texture used is packaged along with the models/maps that include it.)</p>
 - http://opengameart.org/textures/all
 - http://www.cgtextures.com/
     
