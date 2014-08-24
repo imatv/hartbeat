@@ -1,4 +1,4 @@
-Slum Guns = old muskets. Build way to top.
+﻿Slum Guns = old muskets. Build way to top.
 government org control of society
 you are middle of the rank ladder
 figure out corruption via rookie
@@ -44,7 +44,7 @@ holding breath allows walking through
 emotiv epoc certain class?
 org helmets that allow epoc skills?
 sounds: steam, typical fps, etc
-music: Radioactive imagine dragons, lorn, tim hecker, shlohmo
+music: Radioactive imagine dragons, lorn, tim hecker, shlohmo, eskmo, BADBADNOTGOOD, 
 radioactive material = epoc powers?
 save world before dies
 ferguson missouri style riots tear gas etc.
