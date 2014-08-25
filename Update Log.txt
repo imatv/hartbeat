@@ -2,9 +2,10 @@ TODO: Plan workload and begin!
 TODO: Graphical Logo design
 TODO: Everyone get Blender (3D Graphics Creation software)
 TODO: Everyone get Git and Github setup.
-TODO: Everyone get UDK (if possible).
+TODO: Everyone get UDK (Jeremy, you don't need to)
+TODO: Everyone get nFringe working with Visual Studio (Probabaly Ethan, Vipul, and Alvin)
 
-Note: UnrealScript is the way to go for changing game logic in UDK.
+Note: UnrealScript is the way to go for changing game logic in UDK. (Tutorials from Eat3D) -> http://eat3d.com/unrealscript
     ^Probably for the heartrate/breathing functionality.
 Note: Kismet is used for level scripting.
     ^For map/level environment functionality. (Like opening doors)
