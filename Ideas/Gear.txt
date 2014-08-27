@@ -1,0 +1,48 @@
+Classes:
+    Sniper:
+	-best class
+	-scope HUD
+	-no scope realistic (movement speed reduced after shooting)
+	-bullet drop
+	-hold breath for steadier scope
+	-scope lens magnification switcher (eye doctor style)
+    Tank:
+	-explosive guy
+	-pressurized shrapnel grenades
+	-shrapnel shotgun
+    Epoc:
+	-emotiv epoc certain class?
+	-Maybe steam based magic?
+	-org helmets that allow epoc skills
+    Archer:
+	-Uses Jerms gearbow
+	-bare bows in slums
+    Scout:
+	-Fast moving
+	-Pistol
+	-Steam power jetpack
+
+Guns:
+    Slum Guns:
+	-Build way to top
+	-old muskets (slow reload style) 
+	-Bare bow
+        -bayonets
+    Steam Powered Guns:
+	-Not in slums
+
+Perks:
+    Reduce heart rate
+    need some type of upgrading system for weaponry/equipment (more attachments/perks damage modifiers)
+    
+Armor:
+    The heavier the armor the less damage to your health
+    Sheild:
+	-Only in the organization
+	-shield gets worse and worse over multiple shots
+	-like boarderlands
+
+Other:
+    steam propulsion jet packs
+    org helmets that allow epoc skills
+    masks ingame model after ww1 (Air filter style) filters dont last long

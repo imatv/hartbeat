@@ -1,0 +1,29 @@
+Build way to top after you lose all your stuff in the slums
+no regen health
+set point health (no healing unless you have items)
+bleeding effects
+intense moments/horror elements
+using riots to player's advantage
+loot from people or ammo from opponents/currency to buy addons?
+responsive ai to dead enemies
+realistic clip settings
+bank/storage
+robotic police?
+
+
+Heart Rate Sensor:
+    preset heart rate for non heart sensor players
+    relative heart rate scaling
+    reduce raging in games, calmer players
+    sprinting in gmae increases heart rate regardless
+
+Breathing Sensor:
+    holding breath for sniper and oxygen
+    bad air and poison gas (need to hold breath to get through)
+    hold breath for steady aim (sniper class)
+    Can wear a gas mask to get through bad air as well but the filters dont last long
+
+Epoc:
+    epoc = futuristic control that you can use (probably environment-based)
+    radioactive material = epoc powers?
+    use a single button to determine when to use epoc
