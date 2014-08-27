@@ -33,7 +33,7 @@ Flashback:
         You yell at the guards to stop but they ignore you.
 	They shoot the mom for trying to pull the guards off.
 	You have on screen instructions to run over there. You are yelling "MOM!!"
-        You try to run over but his friend/partner holds him back.
+        You try to run over but his friend/partner holds you back.
 	You have the option to punch your friend to try to break free.
 	Once you break free and knock him to the ground you turn around and try to run towards them but your partner grabs your leg and you fall too.
 	You look up at the gruards with your hand out. Your dad yells "You can kill me but you can't kill an idea!". You quietlly say "dad.... mom...." 
@@ -44,7 +44,7 @@ Flashback:
 	Now the story has caught up to present.
 
 Partner Backstory:
-    Girlfriend asks why his friend/partner killed the kid and hold you back.
+    Girlfriend asks why your friend/partner killed the kid and held you back.
     You say you have been friends ever since you were little kids.
     You tell his backstory and the player plays it as your partner as a little kid.
 	-His father is in the org. He wants to build rank in order to change the org from the inside.
@@ -74,14 +74,16 @@ Middle 1:
     This is the modivation for getting to the top.
     
 Middle 2:
+    You meet up with your friends from the slums for help in finding your girlfriend.
     Needs to find the girlfriend. Discovers more about org.
 
 Middle 3:
     Finds his girlfriend and saves her
-    When he saves her he breaths in bad air and poison gas (leads to "death" at end)
-        -Girlfriend held in gas chamber? He gives one of them his mask and he breaths in poison gas.
-    Head of the org gets away
-    He needs to find his way back into the org again to find the leader.
+    Your partner is the one holding her hostage. You shoot your partner and save the girl.
+    When you save her you breathe in bad air and poison gas (leads to "death" at end)
+        -Girlfriend held in gas chamber? He gives her his mask and he breaths in poison gas.
+    You shut the door to the gas chamber on your partner. He gets gased and "dies". (may come back in next game as enemy)
+    You need to find your way back into the org again to find the leader for revenge.
 
 End:
     He makes his way to the leader as his health is getting worse and worse.
