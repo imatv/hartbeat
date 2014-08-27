@@ -15,6 +15,10 @@ Currently...
 - Jeremy is working on 3D Graphics creation (Blender).
 - Alvin is working on map creation in UDK.
 ---------------------------------------------------------------------------------------------------------------------
+8/26/2014 11:17 PM PST (PUSHED TO GITHUB)
+
+Template Map (UDK Tutorial #9) added. Lights and Director Group.
+---------------------------------------------------------------------------------------------------------------------
 8/24/2014 10:58 PM PST (PUSHED TO GITHUB)
 
 Template Maps (UDK Tutorial #7 and #8) added. Sounds. Emissive Light.
