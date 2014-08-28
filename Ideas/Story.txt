@@ -42,7 +42,7 @@ Flashback:
         Now the story has caught up to present.
 
 Partner Back-story:
-    Girlfriend asks why his friend/partner killed the kid and hold you back.
+    Girlfriend asks why his friend/partner killed the kid and held you back.
     You say you have been friends ever since you were little kids.
     You tell his back-story and the player plays it as your partner as a little kid.
 	-His father is in the Org. He wants to build rank in order to change the Org from the inside.
@@ -72,14 +72,17 @@ Middle 1:
     This is the motivation for getting to the top.
     
 Middle 2:
+    You meet up with your friends from the slums for help in finding your girlfriend.
     Needs to find the girlfriend. Discovers more about Org.
 
 Middle 3:
     Finds his girlfriend and saves her
-    When he saves her he breaths in bad air and poison gas (leads to "death" at end)
+    Your partner is the one holding her hostage. You shoot your partner and save the girl.
+    When you save her you breathe in bad air and poison gas (leads to "death" at end)
         -Girlfriend held in gas chamber? He gives one of them his mask and he breaths in poison gas.
     Head of the Org gets away
-    He needs to find his way back into the Org again to find the leader.
+    You shut the door to the gas chamber on your partner. He gets gased and "dies". (may come back in next game as enemy)
+    You need to find your way back into the org again to find the leader for revenge.
 
 End:
     He makes his way to the leader as his health is getting worse and worse.
@@ -90,7 +93,6 @@ End:
 After Credits:
     Player hears ambulance sirens.
     This implies that he doesn't die.
-
 
 Next Game: ????? DO WE EVEN ?????
     He needs medication because his sickness.
