@@ -8,7 +8,7 @@ Technologies Used:
 - UDK (professional 3D engine/toolset for game development: https://www.udk.com/ )
 - Blender (open-source 3D animation suite: http://www.blender.org/ )
 - Arduino (open-source physical computing platform: http://arduino.cc/ )
-- Visual Studio Express (professional IDE built by Microsoft: http://visualstudio.com/ )
+- Visual Studio Express (IDE used for our C++ DLL development: http://visualstudio.com/ )
 - PulseSensor (Arduino heart rate monitor: http://pulsesensor.myshopify.com/ )
 
 Technologies Planned:
