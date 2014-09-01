@@ -1,24 +1,25 @@
-TODO: Plan workload and begin!
-TODO: Graphical Logo design
 TODO: Everyone get Blender (3D Graphics Creation software)
-TODO: Everyone get Git and Github setup.
 TODO: Everyone get UDK (Jeremy, you don't need to)
-TODO: Everyone get nFringe working with Visual Studio (Probabaly Ethan, Vipul, and Alvin)
 
-Note: UnrealScript is the way to go for changing game logic in UDK. (Tutorials from Eat3D) -> http://eat3d.com/unrealscript
+Note: UnrealScript is the way to go for changing game logic in UDK. Tutorials -> http://romerounrealscript.blogspot.com/p/table-of-contents.html
     ^Probably for the heartrate/breathing functionality.
 Note: Kismet is used for level scripting.
     ^For map/level environment functionality. (Like opening doors)
 
 Currently...
-- Ethan is handling the heartrate monitor (PulseSensor).
-- Jeremy is working on 3D Graphics creation (Blender).
-- Alvin is working on map creation in UDK.
+- Ethan is handling the heartrate/breathing monitors (PulseSensor & Arduino).
+- Jeremy is working on 3D Graphics creation - meshes, textures, and  (Blender).
+- Alvin is working on UDK & UnrealScript for custom game logic and map creation.
+- Vipul is working on DLLBind-ing Ethan's data for use in UnrealScript.
+---------------------------------------------------------------------------------------------------------------------
+9/1/2014 3:48 PM PST (PUSHED TO GITHUB)
+
+Added crouch functionality by changing a default setting.
 ---------------------------------------------------------------------------------------------------------------------
 8/27/2014 5:15 AM PST (PUSHED TO GITHUB)
 
-Organized ideas list and made a decent story line. Added a questions/answers text file to ask questions about things
-that we are unsure of.
+Organized ideas list and made a decent story line.
+Added a questions/answers text file to ask questions about things that we are unsure of.
 ---------------------------------------------------------------------------------------------------------------------
 8/26/2014 11:17 PM PST (PUSHED TO GITHUB)
 
