@@ -16,6 +16,10 @@ Currently...
 
 Added crouch functionality by changing a default setting.
 ---------------------------------------------------------------------------------------------------------------------
+9/1/2014 12:45 AM PST (PUSHED TO GITHUB)
+
+Added .fbx file as well as .blend files of companion cube to test exporting to UDK. Also added texture for the cube.
+---------------------------------------------------------------------------------------------------------------------
 8/27/2014 5:15 AM PST (PUSHED TO GITHUB)
 
 Organized ideas list and made a decent story line.
