@@ -9,9 +9,10 @@ void readSerial();
 void setupDCB(DCB &dcb);
 void setupTimeOuts(COMMTIMEOUTS &timeouts);
 void testComStates(DCB &dcb);
+void parseCommData(char* charArray);
 
 HANDLE hSerial = CreateFile("COM6", GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
-int bpm = 0, breathingForce = 0;
+int breathingForce = -100, bpm = -100, pulse = -100;
 
 int main()
 {
@@ -38,7 +39,7 @@ void readSerial()
 			cout << "serial read error";
 			return;
 		}else{
-			cout << szBuff << endl;
+			parseCommData(szBuff);
 		}
 	}
 
@@ -49,9 +50,14 @@ void parseCommData(char* charArray)
 {
 	string line(charArray);
 
-	string::size_type pos = line.find_first_of(',');
-	bpm = atoi(line.substr(0, pos).c_str());
-	breathingForce = atoi(line.substr(pos).c_str());
+	string::size_type pos1 = line.find_first_of(',');
+	string::size_type pos2 = line.find(',', pos1+1);
+	bpm = atoi(line.substr(0, pos1).c_str());
+	cout << bpm;
+	breathingForce = atoi(line.substr(pos1+1, pos2).c_str());
+	cout << breathingForce;
+	pulse = atoi(line.substr(pos2+1).c_str());
+	cout << pulse << endl;
 }
 
 void setupDCB(DCB &dcb)

@@ -15,6 +15,7 @@ extern "C"
 {
 	// Declare our functions
 	DECLDIR int getPulseRate();
+	DECLDIR int getPulseStatus();
 	DECLDIR int getBreathingForce();
 }
 

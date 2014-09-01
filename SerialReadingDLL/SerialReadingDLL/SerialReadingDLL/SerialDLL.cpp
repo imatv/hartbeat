@@ -16,7 +16,7 @@ using namespace std;
 HANDLE hSerial = CreateFile("COM6", GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
 
 // Global variables for easy access to our pulse and breathing data
-int pulseRate = -100, breathingForce = -100;
+int breathingForce = -100, bpm = -100, pulse = -100;
 
 // Avoid name mangeling
 extern "C"
@@ -24,7 +24,12 @@ extern "C"
 	// Returns pulserate
 	DECLDIR int getPulseRate()
 	{
-		return pulseRate;
+		return bpm;
+	}
+
+	DECLDIR int getPulseStatus()
+	{
+		return pulse;
 	}
 
 	// Returns the breathing force
@@ -78,11 +83,14 @@ void parseCommData(char* charArray)
 	// Converts the char array into a string
 	string line(charArray);
 
-	// Deliminates based on commas
-	string::size_type pos = line.find_first_of(',');
-	// Converts the specific substring into a int and save it
-	pulseRate = atoi(line.substr(0, pos).c_str());
-	breathingForce = atoi(line.substr(pos).c_str());
+	// Finds the location of the two commas
+	string::size_type pos1 = line.find_first_of(',');
+	string::size_type pos2 = line.find(',', pos1 + 1);
+
+	// Converts the specific substring into integers and stores them
+	bpm = atoi(line.substr(0, pos1).c_str());
+	breathingForce = atoi(line.substr(pos1 + 1, pos2).c_str());
+	pulse = atoi(line.substr(pos2 + 1).c_str());
 }
 
 // This is the main function to read and save serial data
