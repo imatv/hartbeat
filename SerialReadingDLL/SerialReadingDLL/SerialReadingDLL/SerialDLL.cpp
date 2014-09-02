@@ -18,27 +18,6 @@ HANDLE hSerial = CreateFile("COM6", GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXI
 // Global variables for easy access to our pulse and breathing data
 int breathingForce = -100, bpm = -100, pulse = -100;
 
-// Avoid name mangeling
-extern "C"
-{	
-	// Returns pulserate
-	DECLDIR int getPulseRate()
-	{
-		return bpm;
-	}
-
-	DECLDIR int getPulseStatus()
-	{
-		return pulse;
-	}
-
-	// Returns the breathing force
-	DECLDIR int getBreathingForce()
-	{
-		return breathingForce;
-	}
-}
-
 // Set DCB struct with our specific parameters
 void setupDCB(DCB &dcb)
 {
@@ -94,7 +73,7 @@ void parseCommData(char* charArray)
 }
 
 // This is the main function to read and save serial data
-void readSerial()
+DWORD WINAPI readSerial(LPVOID lpParam)
 {	
 	// Set up the serial port
 	DCB dcbSerialParams = { 0 };
@@ -115,7 +94,7 @@ void readSerial()
 		// If it is unable to read the data, throw an error
 		if (!ReadFile(hSerial, szBuff, n, &dwBytesRead, NULL)){
 			cout << "serial read error";
-			return;
+			return 0;
 		}
 		else{
 			// Parse the line that was recieved in the serial port
@@ -125,4 +104,40 @@ void readSerial()
 
 	// Close the serial port once done
 	CloseHandle(hSerial);
+
+	return 1;
+}
+
+// Avoid name mangeling
+extern "C"
+{
+	// Start getting data
+	DECLDIR void startReadingSerialData()
+	{
+		CreateThread(
+			NULL,                   // default security attributes
+			0,                      // use default stack size  
+			readSerial,       // thread function name
+			NULL,          // argument to thread function 
+			0,                      // use default creation flags 
+			NULL);
+		return;
+	}
+
+	// Returns pulserate
+	DECLDIR int getPulseRate()
+	{
+		return bpm;
+	}
+
+	DECLDIR int getPulseStatus()
+	{
+		return pulse;
+	}
+
+	// Returns the breathing force
+	DECLDIR int getBreathingForce()
+	{
+		return breathingForce;
+	}
 }

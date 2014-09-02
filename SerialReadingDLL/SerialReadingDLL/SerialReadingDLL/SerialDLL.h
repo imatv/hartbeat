@@ -14,6 +14,7 @@
 extern "C"
 {
 	// Declare our functions
+	DECLDIR void startReadingSerialData();
 	DECLDIR int getPulseRate();
 	DECLDIR int getPulseStatus();
 	DECLDIR int getBreathingForce();
