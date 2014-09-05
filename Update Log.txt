@@ -12,6 +12,10 @@ Currently...
 - Alvin is working on UDK & UnrealScript for custom game logic and map creation.
 - Vipul is working on DLLBind-ing Ethan's data for use in UnrealScript.
 ---------------------------------------------------------------------------------------------------------------------
+9/5/2014 3:03 PM PST (PUSHED TO GITHUB)
+
+Added Arduino programs.
+---------------------------------------------------------------------------------------------------------------------
 9/1/2014 3:48 PM PST (PUSHED TO GITHUB)
 
 Added crouch functionality by changing a default setting.
