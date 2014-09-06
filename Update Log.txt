@@ -1,5 +1,5 @@
 TODO: Everyone get Blender (3D Graphics Creation software)
-TODO: Everyone get UDK (Jeremy, you don't need to)
+TODO: Everyone get UDK (Jeremy/Juju, you don't need to)
 
 Note: UnrealScript is the way to go for changing game logic in UDK. Tutorials -> http://romerounrealscript.blogspot.com/p/table-of-contents.html
     ^Probably for the heartrate/breathing functionality.
@@ -8,9 +8,18 @@ Note: Kismet is used for level scripting.
 
 Currently...
 - Ethan is handling the heartrate/breathing monitors (PulseSensor & Arduino).
-- Jeremy is working on 3D Graphics creation - meshes, textures, and  (Blender).
+- Jeremy is working on 3D Graphics creation - meshes, textures, and UV mapping (Blender).
 - Alvin is working on UDK & UnrealScript for custom game logic and map creation.
 - Vipul is working on DLLBind-ing Ethan's data for use in UnrealScript.
+- Juju is learning Python on Codecademy.
+---------------------------------------------------------------------------------------------------------------------
+9/5/2014 5:32 PM PST (PUSHED TO GITHUB)
+
+Added sprint and walk functionality by changing UTPawn.uc and DefaultInput.ini in the UDK files.
+Added instructions on what files to replace in which respective paths.
+Still need to remove testing output and sound from walking.
+
+DLL Visual Studio Project added to repo. Needs to be cleaned up.
 ---------------------------------------------------------------------------------------------------------------------
 9/5/2014 3:03 PM PST (PUSHED TO GITHUB)
 
