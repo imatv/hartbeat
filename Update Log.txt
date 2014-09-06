@@ -12,7 +12,12 @@ Currently...
 - Alvin is working on UDK & UnrealScript for custom game logic and map creation.
 - Vipul is working on DLLBind-ing Ethan's data for use in UnrealScript.
 - Juju is learning Python on Codecademy.
----------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+---------------------------
+9/5/2014 6:07 PM PST (PUSHED TO GITHUB)
+
+Added test question to test pushing. Not important.
+---------------------------
 9/5/2014 5:32 PM PST (PUSHED TO GITHUB)
 
 Added sprint and walk functionality by changing UTPawn.uc and DefaultInput.ini in the UDK files.
