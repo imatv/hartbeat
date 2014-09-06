@@ -1,0 +1,26 @@
+UDK Settings/DefaultInput.ini
+UDK Settings/DefaultEngine.ini
+ = UDK/UDK-2014-05/UDKGame/Config
+
+***************************IMPORTANT*****************************
+
+Place files in given path. Replace old versions.
+Delete both UDKInput.ini and UDKGame.ini, then run the editor.
+The engine will generate new UDK files from DefaultInput with 
+the new keybindings.
+
+*****************************************************************
+
+-----------------------------------------------------------------
+
+HBGame Folder
+ = UDK/UDK-2014-05/Development/Src
+ 
+***************************IMPORTANT*****************************
+
+Place folder in respective path. Run the editor and compile the 
+scripts.  Then when in the editor, under View -> World Properties
+change game type fields (there are two) to HBGame.  Now scripts 
+should work.
+
+*****************************************************************

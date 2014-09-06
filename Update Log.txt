@@ -11,11 +11,23 @@ Currently...
 - Jeremy is working on 3D Graphics creation - meshes, textures, and UV mapping (Blender).
 - Alvin is working on UDK & UnrealScript for custom game logic and map creation.
 - Vipul is working on DLLBind-ing Ethan's data for use in UnrealScript.
-- Juju is learning Python on Codecademy.
+- Juju is working with Alvin on UnrealScript for custom game logic.
+---------------------------------------------------------------------------------------------------------------------
+9/6/2014 7:12 AM PST (PUSHED TO GITHUB)
+
+Fixed sprint and "sneak" functionality with new files that extend UT files.
+Added folder with Readme to explain how to import the new functionalities.
+Folder 'HBGame' contains the custom game scripts.
+Folder 'UDK Settings' contains Package and Key Binding files.
+
+Still need to remove sound from sneaking.
+Still need to remove testing output.
+Still need to work on HUD.
 ---------------------------------------------------------------------------------------------------------------------
 9/5/2014 6:07 PM PST (PUSHED TO GITHUB)
 
 Added test question to test pushing. Not important.
+Removed Thumbs.db files and added them along with .sdf files to the .gitignore.
 ---------------------------------------------------------------------------------------------------------------------
 9/5/2014 5:32 PM PST (PUSHED TO GITHUB)
 
