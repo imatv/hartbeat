@@ -17,6 +17,15 @@ HANDLE hSerial = CreateFile("COM6", GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXI
 
 // Global variables for easy access to our pulse and breathing data
 int breathingForce = -100, bpm = -100, pulse = -100;
+// Length of time interval that we want to analyze
+int timeInterval = 3000;
+// Number of indexes that our breathing data array will have based on the amount of time of data we want to store
+// (200 in this case is the delay between each reading)
+int totalIndexes = timeInterval / 200;
+// Declare array that will hold breathing data collected in the past timeInterval
+int breathingData[150];
+// Integer that will tell us at what point of the breathing data collection we are at
+int index = 0;
 
 // Set DCB struct with our specific parameters
 void setupDCB(DCB &dcb)
@@ -68,8 +77,27 @@ void parseCommData(char* charArray)
 
 	// Converts the specific substring into integers and stores them
 	bpm = atoi(line.substr(0, pos1).c_str());
-	breathingForce = atoi(line.substr(pos1 + 1, pos2).c_str());
+	addBreathingForceData(atoi(line.substr(pos1 + 1, pos2).c_str()));
 	pulse = atoi(line.substr(pos2 + 1).c_str());
+}
+
+// Stores the data parsed from the breathing sensor
+void addBreathingForceData(int breath)
+{	
+	// If the breathing sensor data is not valid, the function does not store it
+	if (breath < 0)
+		return;
+
+	// Stores the breathing sensor data
+	breathingData[index%totalIndexes] = breath;
+
+	// Checks if the array is full
+	if (index%totalIndexes == (totalIndexes - 1))
+	{
+		//Create thread to analyze data
+	}
+
+	index++;
 }
 
 // This is the main function to read and save serial data
