@@ -16,7 +16,7 @@ using namespace std;
 HANDLE hSerial = CreateFile("COM6", GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
 
 // Global variables for easy access to our pulse and breathing data
-int breathingForce = -100, bpm = -100, pulse = -100;
+int breathingSpeed = -100, bpm = -100, pulse = -100;
 // Length of time interval that we want to analyze
 int timeInterval = 3000;
 // Number of indexes that our breathing data array will have based on the amount of time of data we want to store
@@ -65,6 +65,67 @@ void testComStates(DCB &dcb)
 	}
 }
 
+DWORD WINAPI analyzeBreathingData(LPVOID lpParam)
+{
+	// Calculate the average of our current breathing data
+	int total = 0;
+	for (int ind = 0; ind < totalIndexes; ind++)
+		total += breathingData[ind];
+	int average = total / totalIndexes;
+
+	// Calc if wave starts from above
+	boolean above = (breathingData[0] > average);
+
+	// variable to store breathing speed
+	int tempBreathingSpeed = 0;
+
+	// store what the last index was when a breath was counted so that we don't count breaths too frequently
+	int lastChangeIndex = -2;
+
+	// Loop through array
+	for (int ind = 0; ind < totalIndexes; ind++)
+	{
+		// If the current index crosses the average and the last counted breath was not very recent, count a breath
+		if (((above && breathingData[ind] < average) || (!above && breathingData[ind] > average)) && lastChangeIndex < (ind-4))
+		{
+			tempBreathingSpeed++;
+			lastChangeIndex = ind;
+			above != above;
+		}
+	}
+
+	// Update breathing speed data
+	breathingSpeed = tempBreathingSpeed;
+
+	return 1;
+}
+
+// Stores the data parsed from the breathing sensor
+void addBreathingForceData(int breath)
+{
+	// If the breathing sensor data is not valid, the function does not store it
+	if (breath < 0)
+		return;
+
+	// Stores the breathing sensor data
+	breathingData[index%totalIndexes] = breath;
+
+	// Checks if the array is full
+	if (index%totalIndexes == (totalIndexes - 1))
+	{
+		//Create thread to analyze data
+		CreateThread(
+			NULL,                   // default security attributes
+			0,                      // use default stack size  
+			analyzeBreathingData,       // thread function name
+			NULL,          // argument to thread function 
+			0,                      // use default creation flags 
+			NULL);
+	}
+
+	index++;
+}
+
 // Parses the serial data that we recieve from the comm port
 void parseCommData(char* charArray)
 {
@@ -79,25 +140,6 @@ void parseCommData(char* charArray)
 	bpm = atoi(line.substr(0, pos1).c_str());
 	addBreathingForceData(atoi(line.substr(pos1 + 1, pos2).c_str()));
 	pulse = atoi(line.substr(pos2 + 1).c_str());
-}
-
-// Stores the data parsed from the breathing sensor
-void addBreathingForceData(int breath)
-{	
-	// If the breathing sensor data is not valid, the function does not store it
-	if (breath < 0)
-		return;
-
-	// Stores the breathing sensor data
-	breathingData[index%totalIndexes] = breath;
-
-	// Checks if the array is full
-	if (index%totalIndexes == (totalIndexes - 1))
-	{
-		//Create thread to analyze data
-	}
-
-	index++;
 }
 
 // This is the main function to read and save serial data
@@ -164,8 +206,8 @@ extern "C"
 	}
 
 	// Returns the breathing force
-	DECLDIR int getBreathingForce()
+	DECLDIR int getBreathingSpeed()
 	{
-		return breathingForce;
+		return breathingSpeed;
 	}
 }
