@@ -1,4 +1,14 @@
 DefaultInput.ini
  = UDK/UDK-2014-05/UDKGame/Config
- 
-Place file there.
+
+UTPawn.uc
+ = UDK/UDK-2014-05/Development/Src/UTGame/Classes
+
+***************************IMPORTANT***************************
+
+Place files in respective paths. Replace old versions.
+Delete both UDKInput.ini and UDKGame.ini, then run the editor.
+The engine will generate new UDK files from DefaultInput with 
+the new keybindings.
+
+***************************************************************
