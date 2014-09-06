@@ -1,0 +1,6 @@
+Thanks to:
+- Joe P. from CodeGuru for providing a tutorial on writing DLLs
+	http://www.codeguru.com/cpp/cpp/cpp_mfc/tutorials/article.php/c9855/DLL-Tutorial-For-Beginners.htm
+- Robertson Bayer for his paper on Windows Serial Port Programming
+	http://lubosweb.php5.sk/soft/05_serial_posix/serial-win.pdf
+   

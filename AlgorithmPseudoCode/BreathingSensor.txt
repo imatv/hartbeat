@@ -1,0 +1,45 @@
+This may seem confusing but I can explain it to you guys later. We can use this algorithm to measure at what speed the person is breathing.
+
+Create an array (lets call it fsr) with 100 (or (time interval in ms)/(delay in ms between each response)) indexes 
+Since the sensor provides data at a fixed frequency, this array measures a fixed amount of time (5 second if using the calculation above).
+
+int i = 0;
+
+int totalIndexes = 100;
+
+Code in loop which is repeatedly called to get data from sensors
+-------------------
+// Store data into array until we have enough data for analysis
+fsr[i%totalIndexes] = dataFromSensor()
+if(i%totalIndexes==(totalIndexes-1))
+	analyzeData()
+i++
+-------------------
+
+function analyzeData()
+
+// Calc average
+int total = 0;
+	for(int ind = 0; ind < totalIndexes; ind++)
+		total += fsr[ind];
+int average = total/totalIndexes;
+
+// Calc if wave starts from above
+boolean above = (fsr[0] > average);
+
+// variable to store breathing speed
+breath= 0;
+
+// store what the last index was when a breath was counted so that we don't count breaths too frequently
+int lastChangeIndex = 0;
+
+// Loop through array
+	for(int ind = 0; ind < totalIndexes; ind++)
+	{
+		// If the current index crosses the average and the last counted breath was not very recent, count a breath
+		if(((above && fsr[ind] < average) || (!above && fsr[ind] > average) ) && lastChangeIndex < (ind-4)%totalIndexes)
+		{
+			breath++;
+			above != above;
+		}
+	}
