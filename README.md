@@ -1,8 +1,8 @@
 Hartbeat
 ========
+Idea for Alpha Game Jam.  
 
-Original concept by Ethan Harte, Alvin Vuong, Jeremy Rotman, and Vipul Kashyap.  
-Idea for Alpha Game Jam.
+Original concept by Ethan Harte, Alvin Vuong, Jeremy Rotman, Vipul Kashyap, and Julian Carney.
 
 Technologies Used:
 - UDK (professional 3D engine/toolset for game development: https://www.udk.com/ )
