@@ -16,3 +16,7 @@ Map:
     interconnected buildings
     gear cities, load up different cities/instances.
     hierarchy level depends on height in city. slums are bottom.
+    
+HUD:
+    quality of hud based on current situation in story
+    (new in organization, broken in wastelands, slowly repairs as you go)

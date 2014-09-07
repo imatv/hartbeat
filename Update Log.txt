@@ -1,17 +1,41 @@
-TODO: Everyone get Blender (3D Graphics Creation software)
-TODO: Everyone get UDK (Jeremy/Juju, you don't need to)
 
-Note: UnrealScript is the way to go for changing game logic in UDK. Tutorials -> http://romerounrealscript.blogspot.com/p/table-of-contents.html
-    ^Probably for the heartrate/breathing functionality.
-Note: Kismet is used for level scripting.
-    ^For map/level environment functionality. (Like opening doors)
+Update Log.txt
+
+This is where we put descriptions of major changes made to the repository.
+This is also where we put our TODO's for next steps needed to be done.
+
+Note: In UDK, must set game type (Default and PIE) to "HBGame"
 
 Currently...
-- Ethan is handling the heartrate/breathing monitors (PulseSensor & Arduino).
-- Jeremy is working on 3D Graphics creation - meshes, textures, and UV mapping (Blender).
-- Alvin is working on UDK & UnrealScript for custom game logic and map creation.
-- Vipul is working on DLLBind-ing Ethan's data for use in UnrealScript.
-- Juju is working with Alvin on UnrealScript for custom game logic.
+- UDK Map Creation
+    Alvin
+    Ethan
+- UnrealScript Game Logic
+    Alvin
+    Ethan
+    Julian
+- Blender 3D Graphics
+    Jeremy
+- Arduino PulseSensor Heartrate/Breathing Monitors
+    Ethan
+    Vipul
+- DLL Binding
+    Vipul
+    
+TODO: Still need to remove sound from sneaking.
+TODO: Figure out how to import custom images for HUD design.
+TODO: Create a custom gun in Blender blender graphics and in UnrealScript logic.
+---------------------------------------------------------------------------------------------------------------------
+9/7/2014 9:25 AM PST (PUSHED TO GITHUB)
+
+Added a basic HUD (Heads-up Display) with health bar, ammo bar, and ammo count.
+^This file is HBHUD.uc.
+^Required binding in HBGame.uc.
+Changed default game type in Tutorial9.udk.
+Designed a concept HUD on paper.
+Added inspiration screenshots and art for HUD design.
+Removed testing output from sprint/sneak.
+Added an idea for HUD in Theme.txt.
 ---------------------------------------------------------------------------------------------------------------------
 9/6/2014 7:12 AM PST (PUSHED TO GITHUB)
 
@@ -19,10 +43,6 @@ Fixed sprint and "sneak" functionality with new files that extend UT files.
 Added folder with Readme to explain how to import the new functionalities.
 Folder 'HBGame' contains the custom game scripts.
 Folder 'UDK Settings' contains Package and Key Binding files.
-
-Still need to remove sound from sneaking.
-Still need to remove testing output.
-Still need to work on HUD.
 ---------------------------------------------------------------------------------------------------------------------
 9/5/2014 6:07 PM PST (PUSHED TO GITHUB)
 
@@ -34,8 +54,6 @@ Removed Thumbs.db files and added them along with .sdf files to the .gitignore.
 Added sprint and walk functionality by changing UTPawn.uc and DefaultInput.ini in the UDK files.
 Added instructions on what files to replace in which respective paths.
 Still need to remove testing output and sound from walking.
-
-DLL Visual Studio Project added to repo. Needs to be cleaned up.
 ---------------------------------------------------------------------------------------------------------------------
 9/5/2014 3:03 PM PST (PUSHED TO GITHUB)
 

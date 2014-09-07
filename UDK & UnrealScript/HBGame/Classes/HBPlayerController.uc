@@ -6,6 +6,8 @@
 class HBPlayerController extends UTPlayerController
     dependson(HBPawn);
 
+/*
+    
 var bool HBbIsSprinting;
 var bool HBbIsSneaking;
 
@@ -42,3 +44,5 @@ state HBPlayerSpeedChange
 		HBCheckSprintOrSneak();
     }
 }
+
+*/
