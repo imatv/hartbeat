@@ -26,7 +26,7 @@ TODO: Still need to remove sound from sneaking.
 TODO: Figure out how to import custom images for HUD design.
 TODO: Create a custom gun in Blender blender graphics and in UnrealScript logic.
 ---------------------------------------------------------------------------------------------------------------------
-9/7/2014 9:25 AM PST (PUSHED TO GITHUB)
+9/8/2014 1:35 AM PST (PUSHED TO GITHUB)
 
 Removed default UT crosshair.
 Created our own test crosshair in GIMP. (Not used in UnrealScript yet...)
