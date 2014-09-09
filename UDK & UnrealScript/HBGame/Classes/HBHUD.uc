@@ -147,6 +147,14 @@ function DrawAmmoText(String curValue, String maxValue)
     
 }
 
+function DrawRatchetCrosshair()
+{
+    Canvas.SetPos(Canvas.ClipX/2,Canvas.ClipY*13/28);
+    Canvas.SetDrawColor(0,255,0,200);
+    Canvas.Font = class'Engine'.static.GetLargeFont();
+    Canvas.DrawText(".", true, 1.5, 1.5);
+}
+
 function DrawGameHud()
 {
     //Super.DrawGameHud();
@@ -156,6 +164,7 @@ function DrawGameHud()
         DrawHealthBar(PlayerOwner.Pawn.Health, PlayerOwner.Pawn.HealthMax, Canvas.ClipX/3, Canvas.ClipY/10, 200, 80, 80);
         DrawAmmoText(String(UTWeapon(PawnOwner.Weapon).AmmoCount), String(UTWeapon(PawnOwner.Weapon).MaxAmmoCount));
         DrawAmmoBar(UTWeapon(PawnOwner.Weapon).AmmoCount, UTWeapon(PawnOwner.Weapon).MaxAmmoCount, 175, Canvas.ClipY*18/20 + 15, 245, 245, 100);
+        DrawRatchetCrosshair();
     }
     
     Super.DisplayDamage();  //For damage indicator (TODO: Need to make this directional)
