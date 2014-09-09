@@ -137,8 +137,8 @@ void parseCommData(char* charArray)
 	string::size_type pos2 = line.find(',', pos1 + 1);
 
 	// Converts the specific substring into integers and stores them
-	bpm = atoi(line.substr(0, pos1).c_str());
-	addBreathingForceData(atoi(line.substr(pos1 + 1, pos2).c_str()));
+	addBreathingForceData(atoi(line.substr(0, pos1).c_str()));
+	bpm = atoi(line.substr(pos1 + 1, pos2).c_str());
 	pulse = atoi(line.substr(pos2 + 1).c_str());
 }
 
