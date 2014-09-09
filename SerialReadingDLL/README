@@ -7,14 +7,16 @@ This project simply reads data from the specified serial port.
 3) Compile and run.
 
 ------------------------------------------------------------------------------
-SerialReadingDLL project (Hartbeat\SerialReadingDLL\SerialReadingDLL)
+NewDLL project (Hartbeat\SerialReadingDLL\NewDLL)
 ------------------------------------------------------------------------------
-This project contains the code for the dll file. 
-1) Open the "SerialReadingDLL.sln" file.
+This project contains the code for the new dll file that is compatible with UDK. 
+1) Open the "NewDLL.sln" file.
 2) Build the code.
-3) Go to the Debug folder (Hartbeat\SerialReadingDLL\SerialReadingDLL\Debug) and you should find here the .dll and .lib. These are the files that we will be using.
+3) Go to the Debug folder (Hartbeat\SerialReadingDLL\NewDLL\Debug) and you should find here the .dll and .lib. These are the files that we will be using.
 
 The dll file will be used in our Unreal Engine Game and both these files will be used in our C++ program that tests the functionality of the dll file.
+
+Thanks to UDK Documentation (http://udn.epicgames.com/Three/DLLBind.html) for providing info on DLL format and some header files
 
 ------------------------------------------------------------------------------
 TestDLL project (Hartbeat\SerialReadingDLL\TestDLL)
@@ -27,3 +29,16 @@ This project contains the code for the dll test program.
 ------------------------------------------------------------------------------
 For the functionality of each project and the logic behind its code, read the comments of the code.
 ------------------------------------------------------------------------------
+
+***NO LONGER USING SerialReadingDLL ---- NOW USING NewDLL****
+****Ignore****
+------------------------------------------------------------------------------
+SerialReadingDLL project (Hartbeat\SerialReadingDLL\SerialReadingDLL)
+------------------------------------------------------------------------------
+This project contains the code for the dll file. 
+1) Open the "SerialReadingDLL.sln" file.
+2) Build the code.
+3) Go to the Debug folder (Hartbeat\SerialReadingDLL\SerialReadingDLL\Debug) and you should find here the .dll and .lib. These are the files that we will be using.
+
+The dll file will be used in our Unreal Engine Game and both these files will be used in our C++ program that tests the functionality of the dll file.
+****Ignore****
