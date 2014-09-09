@@ -39,7 +39,8 @@ void readSerial()
 			cout << "serial read error";
 			return;
 		}else{
-			parseCommData(szBuff);
+			cout << szBuff << endl;
+			//parseCommData(szBuff);
 		}
 	}
 
