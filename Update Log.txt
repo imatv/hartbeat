@@ -14,6 +14,7 @@ Currently...
     Alvin
     Ethan
     Julian
+    ***HELP US PLS. PLSERONI.***
 - Blender 3D Graphics
     Jeremy
 - Arduino PulseSensor Heartrate/Breathing Monitors
@@ -23,8 +24,13 @@ Currently...
     Vipul
     
 TODO: Still need to remove sound from sneaking.
-TODO: Figure out how to import custom images for HUD design.
-TODO: Create a custom gun in Blender blender graphics and in UnrealScript logic.
+TODO: Figure out how to import custom images for HUD design. (Scaleform GFx)
+TODO: Create a custom gun in Blender blender graphics and in UnrealScript logic. (dat AK-47 tutorial)
+---------------------------------------------------------------------------------------------------------------------
+9/9/2014 4:32 AM PST (PUSHED TO GITHUB)
+
+Added new gun based on a tutorial. No unique mesh/animations/sounds/particles yet. Zoom and flashlight included.
+Added weapon base station to the tutorial #9 map.
 ---------------------------------------------------------------------------------------------------------------------
 9/9/2014 4:13 AM PST (PUSHED TO GITHUB)
 
@@ -33,7 +39,7 @@ Modified test “CompanionCube” to test exported models from blender.
 9/8/2014 1:35 AM PST (PUSHED TO GITHUB)
 
 Removed default UT crosshair.
-Created our own test crosshair in GIMP. (Not used in UnrealScript yet...)
+Created our own ratchet test crosshair in GIMP. (Not used in UnrealScript yet...)
 Getting Adobe Master Collection for Flash and Scaleform GFx. Going to be used for HUD elements most likely.
 Added damage indicator to show getting hit.
 ---------------------------------------------------------------------------------------------------------------------
