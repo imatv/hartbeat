@@ -2,7 +2,7 @@
     This allows the editor to select the game type to be our game mode.
 */
 
-class HBGame extends UTDeathmatch;
+class HBGame extends UTGame;
 
 defaultproperties
 {

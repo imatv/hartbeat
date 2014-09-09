@@ -46,3 +46,7 @@ state HBPlayerSpeedChange
 }
 
 */
+
+defaultproperties
+{
+}

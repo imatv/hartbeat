@@ -18,13 +18,20 @@ Currently...
     Jeremy
 - Arduino PulseSensor Heartrate/Breathing Monitors
     Ethan
-    Vipul
 - DLL Binding
+    Ethan
     Vipul
     
 TODO: Still need to remove sound from sneaking.
 TODO: Figure out how to import custom images for HUD design.
 TODO: Create a custom gun in Blender blender graphics and in UnrealScript logic.
+---------------------------------------------------------------------------------------------------------------------
+9/7/2014 9:25 AM PST (PUSHED TO GITHUB)
+
+Removed default UT crosshair.
+Created our own test crosshair in GIMP. (Not used in UnrealScript yet...)
+Getting Adobe Master Collection for Flash and Scaleform GFx. Going to be used for HUD elements most likely.
+Added damage indicator to show getting hit.
 ---------------------------------------------------------------------------------------------------------------------
 9/7/2014 9:25 AM PST (PUSHED TO GITHUB)
 
