@@ -18,7 +18,7 @@ exec function HBStartSprint()
 
 	//ClientMessage("--Sprinting--");
     //ClientMessage("Pawnspeed before change is: " @ GroundSpeed);
-	GroundSpeed = 320.0;
+	GroundSpeed = 440.0;
 	//ClientMessage("Pawnspeed after change is: " @ GroundSpeed);
 	//ClientMessage("--Sprinting--");
 }
@@ -92,15 +92,20 @@ event UpdateEyeHeight( float DeltaTime )
 
 //Mutes footstep sound when walking/sneaking
 //Calls function back in UTPawn
-
-simulated function ActuallyPlayFootstepSound(int FootDown)
+simulated event PlayFootStepSound(int FootDown)
 {
-	local SoundCue FootSound;
+	local PlayerController PC;
 
-	FootSound = SoundGroupClass.static.GetFootstepSound(FootDown, GetMaterialBelowFeet());
-	if ((FootSound != None) && (HBbSneakOn==false))
+	if ( !IsFirstPerson() && HBbSneakOn = false )
 	{
-		PlaySound(FootSound, false, true,,, true);
+		ForEach LocalPlayerControllers(class'PlayerController', PC)
+		{
+			if ( (PC.ViewTarget != None) && (VSizeSq(PC.ViewTarget.Location - Location) < MaxFootstepDistSq) )
+			{
+				ActuallyPlayFootstepSound(FootDown);
+				return;
+			}
+		}
 	}
 }
 
