@@ -1,18 +1,11 @@
 /*
-	Attempts to mute footsteps while walking.
+	WELP GG THIS DOES NOTHING
 */
 
-class HBPawnSoundGroup extends UTPawnSoundGroup within HBPawn
+class HBPawnSoundGroup extends UTPawnSoundGroup
 	abstract
 	dependson (HBPhysicalMaterialProperty);
 
-static function MuteSneakFootstep(HBPawn P)
-{
-	if (P.HBbSneakOn)
-	{
-		P.PlaySound(default.DefaultFootstepSound, false, false);
-	}
-}
 
 DefaultProperties
 {

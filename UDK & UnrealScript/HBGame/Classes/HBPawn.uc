@@ -90,6 +90,25 @@ event UpdateEyeHeight( float DeltaTime )
 	Flashlight.SetRelativeLocation(Controller.RelativeLocation + vect(20, 0, 25));
 }
 
+//Mutes footstep sound when walking/sneaking
+//Calls function back in UTPawn
+simulated event PlayFootStepSound(int FootDown)
+{
+	local PlayerController PC;
+
+	if ( !IsFirstPerson() && HBbSneakOn = false )
+	{
+		ForEach LocalPlayerControllers(class'PlayerController', PC)
+		{
+			if ( (PC.ViewTarget != None) && (VSizeSq(PC.ViewTarget.Location - Location) < MaxFootstepDistSq) )
+			{
+				ActuallyPlayFootstepSound(FootDown);
+				return;
+			}
+		}
+	}
+}
+
 ///DEFAULT PLAYER PROPERTIES:
 defaultproperties
 {
