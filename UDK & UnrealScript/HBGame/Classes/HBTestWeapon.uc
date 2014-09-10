@@ -59,12 +59,6 @@ ZoomedTargetFOV=12.0
 ZoomedRate=9000
 }
 
-begin object Class=SpotLightComponent Name=SpotLightComponent0
-Radius=1000
-Brightness=3
-LightColor=(R=255,G=240,B=190)
-CastShadows=false
-end object
-Components.Add(SpotLightComponent0)
+
 
 }
