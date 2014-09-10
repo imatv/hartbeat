@@ -50,7 +50,7 @@ exec function HBStopSprintOrSneak()
 
 exec function HBToggleFlashlight()
 {
-	if(!Flashlight.LightComponent.bEnabled)
+	if (!Flashlight.LightComponent.bEnabled)
 	{
 		Flashlight.LightComponent.SetEnabled(true);
 	}
@@ -65,15 +65,11 @@ simulated event PostBeginPlay()
 	Super.PostBeginPlay();
 	
 	//spawns flashlight from Pawn's location
-	
 	Flashlight = Spawn(class'HBWeaponFlashlight', self);
-	
 	Flashlight.SetBase(self);
-	
 	Flashlight.LightComponent.SetEnabled(false);
 	
 	//Able to change Brightness % of Flashlight
-	
 	Flashlight.LightComponent.SetLightProperties(1.00);
 }
 
@@ -82,16 +78,14 @@ event UpdateEyeHeight( float DeltaTime )
 	Super.UpdateEyeHeight(DeltaTime);
 	
 	//Allows Flashlight to move along with Pawn
-	
 	Flashlight.SetRotation(Controller.Rotation);
 	
 	//Adjusted so that Flashlight appears to come from Pawn helmet
-	
 	Flashlight.SetRelativeLocation(Controller.RelativeLocation + vect(20, 0, 25));
 }
 
 //Mutes footstep sound when walking/sneaking
-//Calls function back in UTPawn
+//Modified version of UTPawn's function.
 
 simulated function ActuallyPlayFootstepSound(int FootDown)
 {
