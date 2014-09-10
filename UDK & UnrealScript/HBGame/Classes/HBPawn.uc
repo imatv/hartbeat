@@ -96,7 +96,7 @@ simulated event PlayFootStepSound(int FootDown)
 {
 	local PlayerController PC;
 
-	if ( !IsFirstPerson() && HBbSneakOn = false )
+	if ( !IsFirstPerson() && (HBbSneakOn == false) )
 	{
 		ForEach LocalPlayerControllers(class'PlayerController', PC)
 		{
