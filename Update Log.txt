@@ -1,4 +1,3 @@
-
 Update Log.txt
 
 This is where we put descriptions of major changes made to the repository.
@@ -26,6 +25,10 @@ Currently...
 TODO: Still need to remove sound from sneaking.
 TODO: Figure out how to import custom images for HUD design. (Scaleform GFx)
 TODO: Create a custom gun in Blender blender graphics and in UnrealScript logic. (dat AK-47 tutorial)
+---------------------------------------------------------------------------------------------------------------------
+9/10/2014 6:42 AM PST (PUSHED TO GITHUB)
+
+Potentially muted footstep sounds while walking/sneaking.
 ---------------------------------------------------------------------------------------------------------------------
 9/10/2014 5:19 AM PST (PUSHED TO GITHUB)
 
