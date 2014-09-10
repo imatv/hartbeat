@@ -21,9 +21,17 @@ Currently...
 - DLL Binding
     Ethan
     Vipul
-    
-TODO: Figure out how to import custom images for HUD design. (Scaleform GFx)
-TODO: Create a custom gun in Blender blender graphics and in UnrealScript logic. (dat AK-47 tutorial)
+
+TODO: Create a custom gun in blender graphics and in UnrealScript logic. (dat AK-47 tutorial)
+TODO: Create alpha game map.
+TODO: DLL-bind heartrate data to UnrealScript.
+TODO: Crosshair based on heartrate in HUD.
+TODO: Finish HUD design.
+TODO: Breathing mechanics in game.
+---------------------------------------------------------------------------------------------------------------------
+9/10/2014 8:32 AM PST (PUSHED TO GITHUB)
+
+Made sprinting speed slower.
 ---------------------------------------------------------------------------------------------------------------------
 9/10/2014 8:11 AM PST (PUSHED TO GITHUB)
 

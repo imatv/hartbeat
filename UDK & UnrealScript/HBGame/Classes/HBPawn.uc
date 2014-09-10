@@ -18,7 +18,7 @@ exec function HBStartSprint()
 
 	//ClientMessage("--Sprinting--");
     //ClientMessage("Pawnspeed before change is: " @ GroundSpeed);
-	GroundSpeed = 440.0;
+	GroundSpeed = 320.0;
 	//ClientMessage("Pawnspeed after change is: " @ GroundSpeed);
 	//ClientMessage("--Sprinting--");
 }
