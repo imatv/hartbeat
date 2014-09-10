@@ -7,6 +7,7 @@ class HBPawn extends UTPawn;
 
 //Adds Flashlight
 var HBWeaponFlashlight Flashlight;
+var bool HBbSneakOn;
 
 ///EXEC FUNCTIONS:
 //Sprint function (mapped to the LEFT SHIFT)
@@ -32,6 +33,7 @@ exec function HBStartSneak()
 	GroundSpeed = 130.0; //130 for crouching
 	//ClientMessage("Pawnspeed after change is: " @ GroundSpeed);
 	//ClientMessage("--Sneaking--");
+    HBbSneakOn = true;
 }
 
 //Revert back to normal speed
@@ -43,6 +45,7 @@ exec function HBStopSprintOrSneak()
 	GroundSpeed = 220.0;
 	//ClientMessage("Pawnspeed after change is: " @ GroundSpeed);
     //ClientMessage("--Normal--");
+    HBbSneakOn = false;
 }
 
 exec function HBToggleFlashlight()
@@ -94,4 +97,6 @@ defaultproperties
 	GroundSpeed=220.0
 	AirSpeed=220.0
 	DodgeSpeed=300.0
+    
+    HBbSneakOn = false
 }

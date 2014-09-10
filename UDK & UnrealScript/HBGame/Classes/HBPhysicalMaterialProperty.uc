@@ -2,7 +2,7 @@
 	Type of ground
 */
 
-class HBPhysicalMaterialProperty extends UTPhysicalMaterialProperty
+class HBPhysicalMaterialProperty extends UTPhysicalMaterialProperty;
 
 DefaultProperties
 {
