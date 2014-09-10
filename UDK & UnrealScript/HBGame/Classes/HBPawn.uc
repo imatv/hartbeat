@@ -98,7 +98,7 @@ simulated function ActuallyPlayFootstepSound(int FootDown)
 	local SoundCue FootSound;
 
 	FootSound = SoundGroupClass.static.GetFootstepSound(FootDown, GetMaterialBelowFeet());
-	if ((FootSound != None) && (HBbSneakOn=false))
+	if ((FootSound != None) && (HBbSneakOn==false))
 	{
 		PlaySound(FootSound, false, true,,, true);
 	}
