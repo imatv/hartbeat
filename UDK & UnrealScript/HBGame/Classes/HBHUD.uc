@@ -64,6 +64,7 @@ class HBHUD extends UTHUD;
 
 var CanvasIcon clockIcon;
 
+// Draws the health bar at the top of the screen
 function DrawHealthBar(float Value, float MaxValue,int X, int Y, int R, int G, int B)
 {
     local int PosX,NbCases,i;
@@ -100,6 +101,7 @@ function DrawHealthBar(float Value, float MaxValue,int X, int Y, int R, int G, i
     }
 }
 
+// Draws the ammo bars on the bottom left corner of the screen
 function DrawAmmoBar(float Value, float MaxValue,int X, int Y, int R, int G, int B)
 {
     local int PosX,NbCases,i;
@@ -120,6 +122,7 @@ function DrawAmmoBar(float Value, float MaxValue,int X, int Y, int R, int G, int
     }
 }
 
+// Draws the ammo count on the bottom left corner of the screen.
 function DrawAmmoText(String curValue, String maxValue)
 {
     local int PosX;
@@ -147,6 +150,7 @@ function DrawAmmoText(String curValue, String maxValue)
     
 }
 
+// Draws a period in the middle of the screen. Will be replaced.
 function DrawRatchetCrosshair()
 {
     Canvas.SetPos(Canvas.ClipX/2,Canvas.ClipY*13/28);
@@ -164,7 +168,7 @@ function DrawGameHud()
         DrawHealthBar(PlayerOwner.Pawn.Health, PlayerOwner.Pawn.HealthMax, Canvas.ClipX/3, Canvas.ClipY/10, 200, 80, 80);
         DrawAmmoText(String(UTWeapon(PawnOwner.Weapon).AmmoCount), String(UTWeapon(PawnOwner.Weapon).MaxAmmoCount));
         DrawAmmoBar(UTWeapon(PawnOwner.Weapon).AmmoCount, UTWeapon(PawnOwner.Weapon).MaxAmmoCount, 175, Canvas.ClipY*18/20 + 15, 245, 245, 100);
-        DrawRatchetCrosshair();
+        //DrawRatchetCrosshair();
     }
     
     Super.DisplayDamage();  //For damage indicator (TODO: Need to make this directional)

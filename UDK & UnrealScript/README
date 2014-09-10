@@ -2,6 +2,10 @@ UDK Settings/DefaultInput.ini
 UDK Settings/DefaultEngine.ini
 UDK Settings/DefaultGame.ini
  = UDK/UDK-2014-05/UDKGame/Config
+ 
+UDK Settings/hd_hud.upk
+UDK Settings/Tutorial9.upk
+ = UDK/UDK-2014-05/UDKGame/Content
 
 ***************************IMPORTANT*****************************
 
