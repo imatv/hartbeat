@@ -6,6 +6,12 @@ UDK Settings/DefaultGame.ini
 UDK Settings/hd_hud.upk
 UDK Settings/Tutorial9.upk
  = UDK/UDK-2014-05/UDKGame/Content
+ 
+hb_hud Folder
+ = UDK/UDK-2014-05/UDKGame/Flash
+ 
+HBGame Folder
+ = UDK/UDK-2014-05/Development/Src
 
 ***************************IMPORTANT*****************************
 
@@ -14,18 +20,11 @@ Delete both UDKInput.ini and UDKGame.ini, then run the editor.
 The engine will generate new UDK files from DefaultInput with 
 the new keybindings.
 
-*****************************************************************
-
------------------------------------------------------------------
-
-HBGame Folder
- = UDK/UDK-2014-05/Development/Src
- 
-***************************IMPORTANT*****************************
-
-Place folder in respective path. Run the editor and compile the 
+Place folders in respective path. Run the editor and compile the 
 scripts.  Then when in the editor, under View -> World Properties
 change game type fields (there are two) to HBGame.  Now scripts 
 should work.
 
+Also when in the editor, make sure to open content browser and 
+reload the flash .swf file.
 *****************************************************************
