@@ -27,6 +27,10 @@ TODO: Still need to remove sound from sneaking.
 TODO: Figure out how to import custom images for HUD design. (Scaleform GFx)
 TODO: Create a custom gun in Blender blender graphics and in UnrealScript logic. (dat AK-47 tutorial)
 ---------------------------------------------------------------------------------------------------------------------
+9/10/2014 1:34 AM PST (PUSHED TO GITHUB)
+
+Successfully imported companion cube into tutorial #9.
+---------------------------------------------------------------------------------------------------------------------
 9/9/2014 4:32 AM PST (PUSHED TO GITHUB)
 
 Added new gun based on a tutorial. No unique mesh/animations/sounds/particles yet. Zoom and flashlight included.
