@@ -27,6 +27,13 @@ TODO: Still need to remove sound from sneaking.
 TODO: Figure out how to import custom images for HUD design. (Scaleform GFx)
 TODO: Create a custom gun in Blender blender graphics and in UnrealScript logic. (dat AK-47 tutorial)
 ---------------------------------------------------------------------------------------------------------------------
+9/10/2014 5:19 AM PST (PUSHED TO GITHUB)
+
+Got Scaleform GFx to work with Adobe Flash Pro CS6.
+Used a crosshair dot image.
+Replaced ratchet period crosshair with Scaleform GFx in Kismet.
+Set-up Adobe Flash to work with editing our HUD. (Actionscript is needed).
+---------------------------------------------------------------------------------------------------------------------
 9/10/2014 4:17 AM PST (PUSHED TO GITHUB)
 
 Added Flashlight Toggle.
