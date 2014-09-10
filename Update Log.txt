@@ -1,4 +1,4 @@
-Update Log.txt
+﻿Update Log.txt
 
 This is where we put descriptions of major changes made to the repository.
 This is also where we put our TODO's for next steps needed to be done.
@@ -28,6 +28,10 @@ TODO: DLL-bind heartrate data to UnrealScript.
 TODO: Crosshair based on heartrate in HUD.
 TODO: Finish HUD design.
 TODO: Breathing mechanics in game.
+---------------------------------------------------------------------------------------------------------------------
+9/10/2014 10:32 AM PST (PUSHED TO GITHUB)
+
+Made a room for the alpha map.
 ---------------------------------------------------------------------------------------------------------------------
 9/10/2014 8:32 AM PST (PUSHED TO GITHUB)
 
