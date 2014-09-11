@@ -1,0 +1,1 @@
+class HBDamageType extend UTDamageType
