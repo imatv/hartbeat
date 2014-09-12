@@ -22,12 +22,22 @@ Currently...
     Ethan
     Vipul
 
-TODO: Create a custom gun in blender graphics and in UnrealScript logic. (dat AK-47 tutorial)
+TODO: Get gun animations to work.
 TODO: Create alpha game map.
 TODO: DLL-bind heartrate data to UnrealScript.
 TODO: Crosshair based on heartrate in HUD.
 TODO: Finish HUD design.
 TODO: Breathing mechanics in game.
+---------------------------------------------------------------------------------------------------------------------
+9/12/2014 2:45 AM PST (PUSHED TO GITHUB)
+
+HUD now comes from Flash directly through UnrealScript code. (HBHudWrapper.uc & HBGFxHUD.uc)
+Removed Kismet HUD setup.
+Gun model from Blender now able to be textured.
+Reduced polygon count of gun model.
+Test gun code for reloading added to separate folder in repo.
+Packaging setup for HUD classes and gun models.
+Fixed hard reset problems.
 ---------------------------------------------------------------------------------------------------------------------
 9/10/2014 10:32 AM PST (PUSHED TO GITHUB)
 
