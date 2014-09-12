@@ -93,16 +93,9 @@ simulated function ActuallyPlayFootstepSound(int FootDown)
 
 	FootSound = SoundGroupClass.static.GetFootstepSound(FootDown, GetMaterialBelowFeet());
     if ((FootSound != None) && (HBbSneakOn==false))
-	{
-		ForEach LocalPlayerControllers(class'PlayerController', PC)
-		{
-			if ( (PC.ViewTarget != None) && (VSizeSq(PC.ViewTarget.Location - Location) < MaxFootstepDistSq) )
-			{
-				ActuallyPlayFootstepSound(FootDown);
-				return;
-			}
-		}
-	}
+ 	{
+ 		PlaySound(FootSound, false, true,,, true);
+ 	}
 }
 
 ///DEFAULT PLAYER PROPERTIES:
