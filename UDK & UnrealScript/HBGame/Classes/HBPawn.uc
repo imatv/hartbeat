@@ -18,7 +18,7 @@ exec function HBStartSprint()
 
 	//ClientMessage("--Sprinting--");
     //ClientMessage("Pawnspeed before change is: " @ GroundSpeed);
-	GroundSpeed = 440.0;
+	GroundSpeed = 320.0;
 	//ClientMessage("Pawnspeed after change is: " @ GroundSpeed);
 	//ClientMessage("--Sprinting--");
 }
@@ -89,9 +89,10 @@ event UpdateEyeHeight( float DeltaTime )
 
 simulated function ActuallyPlayFootstepSound(int FootDown)
 {
-	local PlayerController PC;
+	local SoundCue FootSound;
 
-	if ( !IsFirstPerson() && HBbSneakOn = false )
+	FootSound = SoundGroupClass.static.GetFootstepSound(FootDown, GetMaterialBelowFeet());
+    if ((FootSound != None) && (HBbSneakOn==false))
 	{
 		ForEach LocalPlayerControllers(class'PlayerController', PC)
 		{
