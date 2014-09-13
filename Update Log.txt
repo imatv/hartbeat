@@ -36,6 +36,10 @@ TODO: Gun bullet spread based on heartrate data.
 TODO: Finish HUD design.
 TODO: Breathing mechanics in game.
 ---------------------------------------------------------------------------------------------------------------------
+9/13/2014 11:14 AM PST (PUSHED TO GITHUB)
+
+Added the 32bit compile bat file
+---------------------------------------------------------------------------------------------------------------------
 9/13/2014 5:18 AM PST (PUSHED LOCALLY)
 
 Got Health bar to scale with health lost.
