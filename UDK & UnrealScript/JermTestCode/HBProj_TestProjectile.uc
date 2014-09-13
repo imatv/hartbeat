@@ -49,7 +49,7 @@ defaultproperties
 	ProjExplosionTemplate=ParticleSystem'WP_LinkGun.Effects.P_WP_Linkgun_Impact'
 	MaxEffectDistance=9000.0
 
-	Speed=2000
+	Speed=1000
 	MaxSpeed=6000
 	AccelRate=2800.0
 
@@ -66,5 +66,5 @@ defaultproperties
 	DrawScale=0.2
 
 	ExplosionSound=SoundCue'A_Weapon_Link.Cue.A_Weapon_Link_ImpactCue'
-	ColorLevel = (X=1, Y=1.3, Z=1)
+	ColorLevel=(X=1,Y=1.3,Z=1)
 }

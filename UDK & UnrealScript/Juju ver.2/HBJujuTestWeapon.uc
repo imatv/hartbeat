@@ -26,8 +26,8 @@ End Object
 
 InstantHitDamage(0)=20                       
 InstantHitDamage(1)=20
-FireInterval(0)=0.1
-FireInterval(1)=0.1
+FireInterval(0)=0.4
+FireInterval(1)=0.4
 
 WeaponFireSnd(0)=SoundCue'A_Character_CorruptEnigma_Cue.Mean_Efforts.A_Effort_EnigmaMean_PainSmall_Cue'               //  your sounds
 WeaponFireSnd(1)=SoundCue'A_Character_CorruptEnigma_Cue.Mean_Efforts.A_Effort_EnigmaMean_PainSmall_Cue'
