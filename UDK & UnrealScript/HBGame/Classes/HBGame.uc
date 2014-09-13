@@ -14,7 +14,7 @@ dllimport final function int getPulseRate();
 dllimport final function int getPulseStatus();
 dllimport final function int getBreathingForce();
 
-exec function startReadingSerial()
+function startReadingSerialData()
 {
 	WorldInfo.Game.Broadcast(self, "Starting DLL!");
 	startReadingSerialData();
@@ -30,17 +30,17 @@ exec function printAllSerialData()
 	WorldInfo.Game.Broadcast(self, "Breathing force was: "$breathingForce);
 }
 
-exec function int givePulseRate()
+function int givePulseRate()
 {
 	return getPulseRate();
 }
 
-exec function int givePulseStatus()
+function int givePulseStatus()
 {
 	return getPulseStatus();
 }
 
-exec function int giveBreathingForce()
+function int giveBreathingForce()
 {
 	return getBreathingForce();
 }
