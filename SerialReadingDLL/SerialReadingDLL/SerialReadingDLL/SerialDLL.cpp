@@ -16,16 +16,7 @@ using namespace std;
 HANDLE hSerial = CreateFile("COM8", GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
 
 // Global variables for easy access to our pulse and breathing data
-int breathingSpeed = -100, bpm = -100, pulse = -100;
-// Length of time interval that we want to analyze
-int timeInterval = 3000;
-// Number of indexes that our breathing data array will have based on the amount of time of data we want to store
-// (200 in this case is the delay between each reading)
-int totalIndexes = timeInterval / 200;
-// Declare array that will hold breathing data collected in the past timeInterval
-int breathingData[150];
-// Integer that will tell us at what point of the breathing data collection we are at
-int index = 0;
+int breathingForce = -100, bpm = -100, pulse = -100;
 
 // Set DCB struct with our specific parameters
 void setupDCB(DCB &dcb)
@@ -65,67 +56,6 @@ void testComStates(DCB &dcb)
 	}
 }
 
-DWORD WINAPI analyzeBreathingData(LPVOID lpParam)
-{
-	// Calculate the average of our current breathing data
-	int total = 0;
-	for (int ind = 0; ind < totalIndexes; ind++)
-		total += breathingData[ind];
-	int average = total / totalIndexes;
-
-	// Calc if wave starts from above
-	boolean above = (breathingData[0] > average);
-
-	// variable to store breathing speed
-	int tempBreathingSpeed = 0;
-
-	// store what the last index was when a breath was counted so that we don't count breaths too frequently
-	int lastChangeIndex = -2;
-
-	// Loop through array
-	for (int ind = 0; ind < totalIndexes; ind++)
-	{
-		// If the current index crosses the average and the last counted breath was not very recent, count a breath
-		if (((above && breathingData[ind] < average) || (!above && breathingData[ind] > average)) && lastChangeIndex < (ind-4))
-		{
-			tempBreathingSpeed++;
-			lastChangeIndex = ind;
-			above != above;
-		}
-	}
-
-	// Update breathing speed data
-	breathingSpeed = tempBreathingSpeed;
-
-	return 1;
-}
-
-// Stores the data parsed from the breathing sensor
-void addBreathingForceData(int breath)
-{
-	// If the breathing sensor data is not valid, the function does not store it
-	if (breath < 0)
-		return;
-
-	// Stores the breathing sensor data
-	breathingData[index%totalIndexes] = breath;
-
-	// Checks if the array is full
-	if (index%totalIndexes == (totalIndexes - 1))
-	{
-		//Create thread to analyze data
-		CreateThread(
-			NULL,                   // default security attributes
-			0,                      // use default stack size  
-			analyzeBreathingData,       // thread function name
-			NULL,          // argument to thread function 
-			0,                      // use default creation flags 
-			NULL);
-	}
-
-	index++;
-}
-
 // Parses the serial data that we recieve from the comm port
 void parseCommData(char* charArray)
 {
@@ -137,9 +67,7 @@ void parseCommData(char* charArray)
 	string::size_type pos2 = line.find(',', pos1 + 1);
 
 	// Converts the specific substring into integers and stores them
-	//addBreathingForceData(atoi(line.substr(0, pos1).c_str()));
-	//bpm = atoi(line.substr(pos1 + 1, pos2).c_str());
-	breathingSpeed = atoi(line.substr(0, pos1).c_str());
+	breathingForce = atoi(line.substr(0, pos1).c_str());
 	bpm = atoi(line.substr(pos1 + 1, pos2).c_str());
 	pulse = atoi(line.substr(pos2 + 1).c_str());
 }
@@ -208,8 +136,8 @@ extern "C"
 	}
 
 	// Returns the breathing force
-	DECLDIR int getBreathingSpeed()
+	DECLDIR int getBreathingForce()
 	{
-		return breathingSpeed;
+		return breathingForce;
 	}
 }
