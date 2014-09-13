@@ -3,17 +3,17 @@
 */
 
 class HBWeapon extends UTWeapon
-	dependson HBPlayerContoller
+	dependson (HBPlayerController)
 	config(Weapon)
 	abstract;
 
-var int TotalAmmoCount //How much ammo is left
+var int TotalAmmoCount; //How much ammo is left
 
-var int clips //How many clips the gun has
+var int clips; //How many clips the gun has
 
-var int ClipSize //How much ammo the clip has
+var int ClipSize; //How much ammo the clip has
 
-var bool bIsReloading
+var bool bIsReloading;
 
 /*********************************************************************************************
  * Initialization / System Messages / Utility
@@ -112,13 +112,13 @@ simulated function CreateOverlayMesh()
 }
 
 //Removed stupid InventoryWeight dumb stupid variable crap
-
+/*
 simulated function CalcInventoryWeight()
 {
 	return true;
-}
+}*/
 
-simulated function bool ShouldSwitchTo(HBWeapon InWeapon)
+/*simulated function bool ShouldSwitchTo(HBWeapon InWeapon)
 {
 	// if we should, but can't right now, tell InventoryManager to try again later
 	if (IsFiring() || DenyClientWeaponSet())
@@ -131,7 +131,7 @@ simulated function bool ShouldSwitchTo(HBWeapon InWeapon)
 		return true;
 	}
 }
-
+*/
 /*********************************************************************************************
  * Hud/Crosshairs
  *********************************************************************************************/
@@ -152,30 +152,11 @@ simulated function ActiveRenderOverlays( HUD H )
 
 simulated function DrawWeaponCrosshair( Hud HUD )
 {
-	local HBHUDBase	H;
+	local UTHUDBase H;
 
-	H = HBHUDBase(HUD);
-	Super.DrawWeaponCrosshair(HUD)
+	H = UTHUDBase(HUD);
+	Super.DrawWeaponCrosshair(HUD);
 
-}
-
-simulated function DrawLockedOn( HUD H )
-{
-	Super.DrawLockedOn(H);
- 	
- 	CrosshairSize.Y = HBHUDBase(H).ConfiguredCrosshairScaling * CurrentLockedScale * CrosshairScaling * LockedCrossHairCoordinates.VL * H.Canvas.ClipY/720;
-  	
-	if ( CrosshairImage != none )
-	{
-		// crosshair drop shadow
-		H.Canvas.DrawColor = class'HBHUD'.default.BlackColor;
-		H.Canvas.SetPos( ScreenX+1, ScreenY+1, TargetDist );
-		H.Canvas.DrawTile(CrosshairImage,CrosshairSize.X, CrosshairSize.Y, LockedCrossHairCoordinates.U, LockedCrossHairCoordinates.V, LockedCrossHairCoordinates.UL,LockedCrossHairCoordinates.VL);
-
-		H.Canvas.DrawColor = CrosshairColor;
-		H.Canvas.SetPos(ScreenX, ScreenY, TargetDist);
-		H.Canvas.DrawTile(CrosshairImage,CrosshairSize.X, CrosshairSize.Y, LockedCrossHairCoordinates.U, LockedCrossHairCoordinates.V, LockedCrossHairCoordinates.UL,LockedCrossHairCoordinates.VL);
-	}
 }
 
 simulated function DisplayDebug(HUD HUD, out float out_YL, out float out_YPos)
@@ -202,50 +183,6 @@ simulated function DisplayDebug(HUD HUD, out float out_YL, out float out_YPos)
 simulated function float GetFireInterval( byte FireModeNum )
 {
 	return FireInterval[FireModeNum] * ((HBPawn(Owner)!= None) ? HBPawn(Owner).FireRateMultiplier : 1.0);
-}
-
-simulated function PlayArmAnimation( Name Sequence, float fDesiredDuration, optional bool OffHand, optional bool bLoop, optional SkeletalMeshComponent SkelMesh)
-{
-	local HBPawn HBP;
-	
-	Super.PlayArmAnimation(Sequence, fDesiredDuration, Offhand, bLoop, SkelMesh);
-	
-	HBP = UTPawn(Instigator);
-	if(HBP == none)
-	{
-		return;
-	}
-	if(HBP.bArmsAttached)
-	{
-		// Choose the right arm
-		if(!OffHand)
-		{
-			ArmMeshComp = HBP.ArmsMesh[0];
-		}
-		else
-		{
-			ArmMeshComp = HBP.ArmsMesh[1];
-		}
-
-		// Check we have access to mesh and animations
-		if( ArmMeshComp == None || ArmsAnimSet == none || GetArmAnimNodeSeq() == None )
-		{
-			return;
-		}
-
-		// If we are not specifying a duration, use the default play rate.
-		if(fDesiredDuration > 0.0)
-		{
-			// @todo - this should call GetWeaponAnimNodeSeq, move 'duration' code into AnimNodeSequence and use that.
-			ArmMeshComp.PlayAnim(Sequence, fDesiredDuration, bLoop);
-		}
-		else
-		{
-			WeapNode = AnimNodeSequence(ArmMeshComp.Animations);
-			WeapNode.SetAnim(Sequence);
-			WeapNode.PlayAnim(bLoop, DefaultAnimSpeed);
-		}
-	}
 }
 
 /** plays view shake on the owning client only */
@@ -276,51 +213,6 @@ simulated event CauseMuzzleFlash()
 			return;
 		}
 	}
-}
-
-simulated function AttachWeaponTo( SkeletalMeshComponent MeshCpnt, optional Name SocketName )
-{
-	local HBPawn HBP;
-
-	HBP = HBPawn(Instigator);
-	// Attach 1st Person Muzzle Flashes, etc,
-	if ( Instigator.IsFirstPerson() )
-	{
-		AttachComponent(Mesh);
-		EnsureWeaponOverlayComponentLast();
-		SetHidden(True);
-		bPendingShow = TRUE;
-		Mesh.SetLightEnvironment(UTP.LightEnvironment);
-		if (GetHand() == HAND_Hidden)
-		{
-			HBP.ArmsMesh[0].SetHidden(true);
-			HBP.ArmsMesh[1].SetHidden(true);
-		}
-	}
-	else
-	{
-		SetHidden(True);
-		if (HBP != None)
-		{
-			Mesh.SetLightEnvironment(UTP.LightEnvironment);
-			HBP.ArmsMesh[0].SetHidden(true);
-			HBP.ArmsMesh[1].SetHidden(true);
-		}
-	}
-
-	SetWeaponOverlayFlags(HBP);
-
-	// Spawn the 3rd Person Attachment
-	if (Role == ROLE_Authority && HBP != None)
-	{
-		HBP.CurrentWeaponAttachmentClass = AttachmentClass;
-		if (WorldInfo.NetMode == NM_ListenServer || WorldInfo.NetMode == NM_Standalone || (WorldInfo.NetMode == NM_Client && Instigator.IsLocallyControlled()))
-		{
-			HBP.WeaponAttachmentChanged();
-		}
-	}
-
-	SetSkin(HBPawn(Instigator).ReplicatedBodyMaterial);
 }
 
 simulated function DetachWeapon()
@@ -394,19 +286,19 @@ simulated function bool DoOverrideNextWeapon()
 
 function Reload()
 {
+	local int AmmoNeeded;
+	local int Diff;
 	if (AmmoCount == ClipSize)
 		return;
 	else
-		local var int AmmoNeeded;
+	{
 		AmmoNeeded = ClipSize - AmmoCount;
-		
-		local var int Diff;
 		Diff = TotalAmmoCount - AmmoNeeded;
 		if (Diff < 0)
 			AmmoCount += (AmmoNeeded + Diff);
 		else
 			AmmoCount += AmmoNeeded;
-	
+	}
 }
 
 simulated function StartFire(byte FireModeNum)
@@ -420,12 +312,12 @@ simulated function StartFire(byte FireModeNum)
 	super.StartFire(FireModeNum);
 }
  
-replication
+/*replication
 {
  	// Server->Client properties
  	if ( bNetOwner )
-	AmmoCount;
-}
+	UTWeapon(AmmoCount);
+}*/
  
 simulated event ReplicatedEvent(name VarName)
 {
@@ -620,6 +512,7 @@ function PrintScreenDebug(string debugText)
  	PC.ClientMessage("HBWeapon: " $ debugText);
 }
  
+ /*
 simulated function AttachWeaponTo( SkeletalMeshComponent MeshCpnt, optional Name SocketName )
 {
  	local HBPawn HBP;
@@ -644,112 +537,7 @@ simulated function AttachWeaponTo( SkeletalMeshComponent MeshCpnt, optional Name
  		}
  	}
  	//SetSkin(HBPawn(Instigator).ReplicatedBodyMaterial);
-}
- 
-simulated event SetPosition(UDKPawn Holder)
-{
- 	local vector DrawOffset, ViewOffset, FinalLocation;
- 	local rotator NewRotation, FinalRotation, SpecRotation;
- 	local PlayerController PC;
- 	local vector2D ViewportSize;
- 	local bool bIsWideScreen;
- 	local vector SpecViewLoc;
- 
- 	if ( !Holder.IsFirstPerson() )
- 	return;
- 
- 	Mesh.SetHidden(False);
- 
- 	foreach LocalPlayerControllers(class'PlayerController', PC)
- 	{
- 		LocalPlayer(PC.Player).ViewportClient.GetViewportSize(ViewportSize);
- 		break;
- 	}
- 	bIsWideScreen = (ViewportSize.Y > 0.f) && (ViewportSize.X/ViewportSize.Y > 1.7);
- 
- 	Mesh.SetScale3D(default.Mesh.Scale3D);
- 	Mesh.SetRotation(default.Mesh.Rotation);
- 
- 	ViewOffset = PlayerViewOffset;
- 
- 	// Calculate the draw offset
- 	if ( Holder.Controller == None )
- 	{
- 
- 		if ( DemoRecSpectator(PC) != None )
- 		{
- 			PC.GetPlayerViewPoint(SpecViewLoc, SpecRotation);
- 			DrawOffset = ViewOffset >> SpecRotation;
- 			//DrawOffset += UTPawn(Holder).WeaponBob(BobDamping, JumpDamping);
- 			FinalLocation = SpecViewLoc + DrawOffset;
- 			SetLocation(FinalLocation);
- 			SetBase(Holder);
- 
- 			// Add some rotation leading
- 			//SpecRotation.Yaw = LagRot(SpecRotation.Yaw & 65535, LastRotation.Yaw & 65535, MaxYawLag, 0);
- 			//SpecRotation.Pitch = LagRot(SpecRotation.Pitch & 65535, LastRotation.Pitch & 65535, MaxPitchLag, 1);
- 			//LastRotUpdate = WorldInfo.TimeSeconds;
- 			//LastRotation = SpecRotation;
- 
- 			if ( bIsWideScreen )
- 			{	
- 				//SpecRotation += WidescreenRotationOffset;
- 			}
- 			SetRotation(SpecRotation);
- 			return;
- 		}
- 	else
- 	{
- 		DrawOffset = (ViewOffset >> Holder.GetBaseAimRotation()) + HTPawn(Holder).GetEyeHeight() * vect(0,0,1);
- 		PrintScreenDebug("Setting DrawOffset to Holder Info");
- 	}
- 	}
- 	else
- 	{
- 
- 		DrawOffset.Z = HTPawn(Holder).GetEyeHeight();
- 		//DrawOffset += HTPawn(Holder).WeaponBob(BobDamping, JumpDamping);
- 
- 		if ( HTPlayerController(Holder.Controller) != None )
- 		{
- 			DrawOffset += HTPlayerController(Holder.Controller).ShakeOffset >> Holder.Controller.Rotation;
- 		}
- 
- 		DrawOffset = DrawOffset + ( ViewOffset >> Holder.Controller.Rotation );
- 	}
- 
- 	// Adjust it in the world
- 	FinalLocation = Holder.Location + DrawOffset;
- 	SetLocation(FinalLocation);
- 	SetBase(Holder);
- 
- 	NewRotation = (Holder.Controller == None) ? Holder.GetBaseAimRotation() : Holder.Controller.Rotation;
- 
- 	// Add some rotation leading
- 	//if (Holder.Controller != None)
- 	//{
-	//    FinalRotation.Yaw = LagRot(NewRotation.Yaw & 65535, LastRotation.Yaw & 65535, MaxYawLag, 0);
- 	//    FinalRotation.Pitch = LagRot(NewRotation.Pitch & 65535, LastRotation.Pitch & 65535, MaxPitchLag, 1);
- 	//    FinalRotation.Roll = NewRotation.Roll;
- 	//}
- 	//else
- 	//{
- 	FinalRotation = NewRotation;
- 	//}
- 	//LastRotUpdate = WorldInfo.TimeSeconds;
- 	//LastRotation = NewRotation;
- 
- 	if ( bIsWideScreen )
- 	{
- 		//FinalRotation += WidescreenRotationOffset;
- 	}
- 	SetRotation(FinalRotation);
-}
- 
-simulated event float GetPowerPerc()
-{
-	return;
-}
+}*/
  
 defaultproperties
 {

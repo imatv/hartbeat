@@ -4,8 +4,15 @@ class HBInventoryManager extends UTInventoryManager
 // Holds the last weapon used
 //var Weapon PreviousWeapon;
 
-var array<TotalAmmoStore> TotalAmmoStorage
+struct native TotalAmmoStore
+{
+	var int				Amount;
+	var class<HBWeapon>	WeaponClass;
+};
 
+var array<TotalAmmoStore> TotalAmmoStorage;
+
+/*
 simulated function OwnerEvent(name EventName)
 {
 	local HBInventory	Inv;
@@ -17,9 +24,9 @@ simulated function OwnerEvent(name EventName)
 			Inv.OwnerEvent(EventName);
 		}
 	}
-}
+}*/
  
-simulated function GetWeaponList(out array<HBWeapon> WeaponList, optional bool bNoEmpty)
+/*simulated function GetWeaponList(out array<HBWeapon> WeaponList, optional bool bNoEmpty, optional bool bFilter, optional int groupFilter)
 {
  	local HBWeapon Weap;
  
@@ -31,7 +38,7 @@ simulated function GetWeaponList(out array<HBWeapon> WeaponList, optional bool b
  			WeaponList[0] = Weap;
  		}
  	}
-}
+}*/
 
 simulated function SwitchWeapon(byte NewGroup)
 {
@@ -48,7 +55,7 @@ simulated function SwitchWeapon(byte NewGroup)
 
 	
 }
-
+/*
 simulated function AdjustWeapon(int NewOffset)
 {
 	local array<HBWeapon> WeaponList;
@@ -61,7 +68,7 @@ simulated function AdjustWeapon(int NewOffset)
 		CurrentWeapon = HBWeapon(Instigator.Weapon);
 	}
 
-}
+}*/
 
 /**
  * Switches to Previous weapon
@@ -83,14 +90,14 @@ simulated function NextWeapon()
 	Super.NextWeapon();
 }
 
-function AllAmmo(optional bool bAmmoForSuperWeapons)
+/*function AllAmmo(optional bool bAmmoForSuperWeapons)
 {
-	Super.AllAmmo(bAmmoForSuperWeapons)
+	Super.AllAmmo(bAmmoForSuperWeapons);
 
-	for( Inv=InventoryChain; Inv!=None; Inv=Inv.Inventory )
+	for(var int Inv=InventoryChain; Inv!=None; Inv=Inv.Inventory )
 		if ( (HBWeapon(Inv)!=None) && (bAmmoForSuperWeapons || !HBWeapon(Inv).bSuperWeapon) )
 			HBWeapon(Inv).Loaded(true);
-}
+}*/
 
 /*
  * Accessor for the server to begin a weapon switch on the client.
@@ -196,12 +203,12 @@ simulated function ProcessRetrySwitch()
 	Super.ProcessRetrySwitch();
 }
 
-simulated function RetrySwitchTo(HBWeapon NewWeapon)
+/*simulated function RetrySwitchTo(HBWeapon NewWeapon)
 {
 	Super.RetrySwitchTo(NewWeapon);
-}
+}*/
 
-/** checks if we should autoswitch to this weapon (server) */
+/** checks if we should autoswitch to this weapon (server)
 simulated function CheckSwitchTo(HBWeapon NewWeapon)
 {
 	if ( HBWeapon(Instigator.Weapon) == None ||
@@ -210,7 +217,7 @@ simulated function CheckSwitchTo(HBWeapon NewWeapon)
 	{
 		NewWeapon.ClientWeaponSet(true);
 	}
-}
+} */
 
 
 /*
@@ -232,7 +239,7 @@ simulated function bool AddInventory( Inventory NewItem, optional bool bDoNotAct
 			{
 				if (AmmoStorage[i].WeaponClass == NewItem.Class)
 				{
-					UTWeapon(NewItem).AddAmmo(AmmoStorage[i].Amount);
+					HBWeapon(NewItem).AddAmmo(AmmoStorage[i].Amount);
 					AmmoStorage.Remove(i,1);
 					break;
 				}
@@ -242,7 +249,7 @@ simulated function bool AddInventory( Inventory NewItem, optional bool bDoNotAct
 			{
 				if (TotalAmmoStorage[i].WeaponClass == NewItem.Class)
 				{
-					UTWeapon(NewItem).AddTotalAmmo(TotalAmmoStorage[i].Amount);
+					HBWeapon(NewItem).AddTotalAmmo(TotalAmmoStorage[i].Amount);
 					TotalAmmoStorage.Remove(i,1);
 					break;
 				}
@@ -327,9 +334,9 @@ simulated function ChangedWeapon()
 // 	}
 //}
 
-function bool NeedsAmmo(class<HBWeapon> TestWeapon)
+function bool NeedsAmmo(class<UTWeapon> TestWeapon)
 {
-    local array <HBWeapon> WeaponList;
+    local array <UTWeapon> WeaponList;
 	local int i;
 
 	// Check the list of weapons
@@ -338,7 +345,7 @@ function bool NeedsAmmo(class<HBWeapon> TestWeapon)
 	{
 		if ( ClassIsChildOf(WeaponList[i].Class, TestWeapon) )	// The Pawn has this weapon
 		{
-			if ( WeaponList[i].TotalAmmoCount < WeaponList[i].MaxAmmoCount )
+			if ( HBWeapon(WeaponList[i]).TotalAmmoCount < HBWeapon(WeaponList[i]).MaxAmmoCount )
 				return true;
 			else
 				return false;
@@ -361,11 +368,9 @@ function bool NeedsAmmo(class<HBWeapon> TestWeapon)
 
 }
 
-}
-
-function AddAmmoToWeapon(int AmountToAdd, class<HBWeapon> WeaponClassToAddTo)
+function AddAmmoToWeapon(int AmountToAdd, class<UTWeapon> WeaponClassToAddTo)
 {
-	local array<HBWeapon> WeaponList;
+	local array<UTWeapon> WeaponList;
 	local int i;
 
 	// Get the list of weapons
@@ -375,7 +380,7 @@ function AddAmmoToWeapon(int AmountToAdd, class<HBWeapon> WeaponClassToAddTo)
 	{
 		if ( ClassIsChildOf(WeaponList[i].Class, WeaponClassToAddTo) )	// The Pawn has this weapon
 		{
-			WeaponList[i].AddTotalAmmo(AmountToAdd);
+			HBWeapon(WeaponList[i]).AddTotalAmmo(AmountToAdd);
 			return;
 		}
 	}
@@ -399,7 +404,7 @@ function AddAmmoToWeapon(int AmountToAdd, class<HBWeapon> WeaponClassToAddTo)
 	i = TotalAmmoStorage.Length;
 	TotalAmmoStorage.Length = TotalAmmoStorage.Length + 1;
 	TotalAmmoStorage[i].Amount = AmountToAdd;
-	TotalAmmoStorage[i].WeaponClass = WeaponClassToAddTo;
+	TotalAmmoStorage[i].WeaponClass = class<HBWeapon>(WeaponClassToAddTo);
 
 }
 

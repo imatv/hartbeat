@@ -2,7 +2,7 @@
 	New Test Weapon using our own weapon properties
 */
 
-class HBJujuTestWeapon extends HBWeapon
+class HBJujuTestWeapon extends HBWeapon;
 
 
 

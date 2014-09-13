@@ -1,4 +1,4 @@
-class HBJujuTestWeaponDamageType extends HBDamageType
+class HBJujuTestWeaponDamageType extends HBDamageType;
 
 defaultproperties
 {

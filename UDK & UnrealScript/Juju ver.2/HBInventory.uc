@@ -1,4 +1,4 @@
-class HBInventory extends Inventory
+class HBInventory extends Inventory;
 
 defaultproperties
 {

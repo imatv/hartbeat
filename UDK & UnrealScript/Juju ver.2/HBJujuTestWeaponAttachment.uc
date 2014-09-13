@@ -1,6 +1,6 @@
 
 
-class HBTJujuTestWeaponAttachment extends UTWeaponAttachment;
+class HBJujuTestWeaponAttachment extends UTWeaponAttachment;
 
 defaultproperties
 {
