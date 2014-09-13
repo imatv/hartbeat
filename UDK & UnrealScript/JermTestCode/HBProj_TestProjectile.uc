@@ -63,7 +63,7 @@ defaultproperties
 	NetCullDistanceSquared=+144000000.0
 
 	bCollideWorld=true
-	DrawScale=0.2
+	DrawScale=1.2
 
 	ExplosionSound=SoundCue'A_Weapon_Link.Cue.A_Weapon_Link_ImpactCue'
 	ColorLevel=(X=1,Y=1.3,Z=1)
