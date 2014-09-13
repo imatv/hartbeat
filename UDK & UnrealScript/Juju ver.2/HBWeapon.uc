@@ -292,13 +292,15 @@ function Reload()
 		return;
 	else
 	{
+		PrintScreenDebug("Reloading Process Beginning");
 		AmmoNeeded = ClipSize - AmmoCount;
 		Diff = TotalAmmoCount - AmmoNeeded;
 		if (Diff < 0)
-			AmmoCount += (AmmoNeeded + Diff);
+			AmmoCount += TotalAmmoCount;
 		else
 			AmmoCount += AmmoNeeded;
 	}
+	bIsReloading = false;
 }
 
 simulated function StartFire(byte FireModeNum)
