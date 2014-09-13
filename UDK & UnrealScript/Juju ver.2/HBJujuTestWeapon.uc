@@ -38,10 +38,10 @@ PickupSound=SoundCue'A_Character_CorruptEnigma_Cue.Mean_Efforts.A_Effort_EnigmaM
 WeaponFireAnim(0)=WeaponFire                                         //  the name of the animation(you can find it when you double click onto the animset)
 WeaponFireAnim(1)=WeaponFire
 
-AttachmentClass=Class'HBJujuTestWeaponAttachment'                         // your attachmentclass 
+AttachmentClass=Class'HBGame.HBJujuTestWeaponAttachment'                         // your attachmentclass 
 
 WeaponFireTypes(0)=EWFT_Projectile
-WeaponProjectiles(0)=class'HBProj_TestProjectile'
+WeaponProjectiles(0)=class'HBGame.HBProj_TestProjectile'
 
 ShotCost(0)=1
 ShotCost(1)=1

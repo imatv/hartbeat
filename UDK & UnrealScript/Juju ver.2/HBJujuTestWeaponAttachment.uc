@@ -15,4 +15,5 @@ MuzzleFlashPSCTemplate=ParticleSystem'gaz661-darkarts3dweapons.Effects.m60mk6MF'
 MuzzleFlashDuration=0.33
 MuzzleFlashLightClass=class'darkarts3d.m60_mk6_mflight'
 WeapAnimType=EWAT_Default
+WeaponClass=class'UTWeap_LinkGun'
 }
