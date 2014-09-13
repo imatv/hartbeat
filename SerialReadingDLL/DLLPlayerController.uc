@@ -11,9 +11,12 @@ exec function Test()
 {
 	say("Starting DLL!");
 	startReadingSerialData();
-	local int pulseR = getPulseRate();
-	local int pulseS = getPulseStatus();
-	local int breathingSpeed = getBreathingSpeed();
+	local int pulseR;
+	pulseR = getPulseRate();
+	local int pulseS;
+	pulseS = getPulseStatus();
+	local int breathingSpeed;
+	pulseS = getBreathingSpeed();
 	say("Pulse rate reading was: "$pulseR);
 	say("Pulse status was: "$pulseS);
 	say("Breathing speed was: "$breathingSpeed);

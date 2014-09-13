@@ -13,7 +13,7 @@ using namespace std;
 #include "SerialDLL.h"
 
 // We open the COM6 serial port for reading
-HANDLE hSerial = CreateFile("COM6", GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
+HANDLE hSerial = CreateFile("COM8", GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
 
 // Global variables for easy access to our pulse and breathing data
 int breathingSpeed = -100, bpm = -100, pulse = -100;
@@ -137,7 +137,9 @@ void parseCommData(char* charArray)
 	string::size_type pos2 = line.find(',', pos1 + 1);
 
 	// Converts the specific substring into integers and stores them
-	addBreathingForceData(atoi(line.substr(0, pos1).c_str()));
+	//addBreathingForceData(atoi(line.substr(0, pos1).c_str()));
+	//bpm = atoi(line.substr(pos1 + 1, pos2).c_str());
+	breathingSpeed = atoi(line.substr(0, pos1).c_str());
 	bpm = atoi(line.substr(pos1 + 1, pos2).c_str());
 	pulse = atoi(line.substr(pos2 + 1).c_str());
 }
