@@ -11,7 +11,7 @@ void setupTimeOuts(COMMTIMEOUTS &timeouts);
 void testComStates(DCB &dcb);
 void parseCommData(char* charArray);
 
-HANDLE hSerial = CreateFile("COM6", GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
+HANDLE hSerial = CreateFile("COM3", GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
 int breathingForce = -100, bpm = -100, pulse = -100;
 
 int main()

@@ -13,7 +13,7 @@ using namespace std;
 #include "SerialDLL.h"
 
 // We open the COM6 serial port for reading
-HANDLE hSerial = CreateFile("COM8", GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
+HANDLE hSerial = CreateFile("COM3", GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
 
 // Global variables for easy access to our pulse and breathing data
 int breathingForce = -100, bpm = -100, pulse = -100;
