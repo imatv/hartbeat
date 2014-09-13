@@ -4,6 +4,8 @@ class HBInventoryManager extends UTInventoryManager
 // Holds the last weapon used
 //var Weapon PreviousWeapon;
 
+var array<TotalAmmoStore> TotalAmmoStorage
+
 simulated function OwnerEvent(name EventName)
 {
 	local HBInventory	Inv;
@@ -214,16 +216,47 @@ simulated function CheckSwitchTo(HBWeapon NewWeapon)
 /*
  * Handle AutoSwitching to a weapon
  */
-//simulated function bool AddInventory( Inventory NewItem, optional bool bDoNotActivate )
-//{
-// 	local bool bResult;
-// 
-// 	if (Role == ROLE_Authority)
-// 	{
-// 		bResult = super.AddInventory(NewItem, bDoNotActivate);
-// 	}
-// 	return bResult;
-//}
+simulated function bool AddInventory( Inventory NewItem, optional bool bDoNotActivate )
+{
+	local bool bResult;
+	local int i;
+
+	if (Role == ROLE_Authority)
+	{
+		bResult = super(InventoryManager).AddInventory(NewItem, bDoNotActivate);
+
+		if (bResult && UTWeapon(NewItem) != None)
+		{
+			// Check to see if we need to give it any extra ammo the pawn has picked up
+			for (i=0;i<AmmoStorage.Length;i++)
+			{
+				if (AmmoStorage[i].WeaponClass == NewItem.Class)
+				{
+					UTWeapon(NewItem).AddAmmo(AmmoStorage[i].Amount);
+					AmmoStorage.Remove(i,1);
+					break;
+				}
+			}
+			
+			for (i=0;i<TotalAmmoStorage.Length;i++)
+			{
+				if (TotalAmmoStorage[i].WeaponClass == NewItem.Class)
+				{
+					UTWeapon(NewItem).AddTotalAmmo(TotalAmmoStorage[i].Amount);
+					TotalAmmoStorage.Remove(i,1);
+					break;
+				}
+			}
+			if (!bDoNotActivate)
+			{
+				CheckSwitchTo(UTWeapon(NewItem));
+			}
+		}
+	}
+
+	return bResult;
+}
+
  
 //simulated function DiscardInventory()
 //{
@@ -297,14 +330,77 @@ simulated function ChangedWeapon()
 function bool NeedsAmmo(class<HBWeapon> TestWeapon)
 {
     local array <HBWeapon> WeaponList;
-    Super.NeedsAmmo(TestWeapon);
+	local int i;
+
+	// Check the list of weapons
+	GetWeaponList(WeaponList);
+	for (i=0;i<WeaponList.Length;i++)
+	{
+		if ( ClassIsChildOf(WeaponList[i].Class, TestWeapon) )	// The Pawn has this weapon
+		{
+			if ( WeaponList[i].TotalAmmoCount < WeaponList[i].MaxAmmoCount )
+				return true;
+			else
+				return false;
+		}
+	}
+
+	// Check our stores.
+	for (i=0;i<AmmoStorage.Length;i++)
+	{
+		if ( ClassIsChildOf(WeaponList[i].Class, TestWeapon) )
+		{
+			if ( TotalAmmoStorage[i].Amount < TestWeapon.default.MaxAmmoCount )
+				return true;
+			else
+				return false;
+		}
+	}
+
+	return true;
+
+}
+
 }
 
 function AddAmmoToWeapon(int AmountToAdd, class<HBWeapon> WeaponClassToAddTo)
 {
 	local array<HBWeapon> WeaponList;
-	Super.AddAmmoToWeapon(AmountToAdd, WeaponClassToAddTo);
-		
+	local int i;
+
+	// Get the list of weapons
+
+	GetWeaponList(WeaponList);
+	for (i=0;i<WeaponList.Length;i++)
+	{
+		if ( ClassIsChildOf(WeaponList[i].Class, WeaponClassToAddTo) )	// The Pawn has this weapon
+		{
+			WeaponList[i].AddTotalAmmo(AmountToAdd);
+			return;
+		}
+	}
+
+	// Add to to our stores for later.
+
+	for (i=0;i<TotalAmmoStorage.Length;i++)
+	{
+
+		// We are already tracking this type of ammo, so just increment the ammount
+
+		if (TotalAmmoStorage[i].WeaponClass == WeaponClassToAddTo)
+		{
+			TotalAmmoStorage[i].Amount += AmountToAdd;
+			return;
+		}
+	}
+
+	// Track a new type of ammo
+
+	i = TotalAmmoStorage.Length;
+	TotalAmmoStorage.Length = TotalAmmoStorage.Length + 1;
+	TotalAmmoStorage[i].Amount = AmountToAdd;
+	TotalAmmoStorage[i].WeaponClass = WeaponClassToAddTo;
+
 }
 
 /**
