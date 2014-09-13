@@ -7,15 +7,15 @@ dllimport final function int getPulseRate();
 dllimport final function int getPulseStatus();
 dllimport final function int getBreathingSpeed();
 
-exec function Test()
+exec function Banana()
 {
+	local int pulseR;
+	local int pulseS;
+	local int breathingSpeed;
 	say("Starting DLL!");
 	startReadingSerialData();
-	local int pulseR;
 	pulseR = getPulseRate();
-	local int pulseS;
 	pulseS = getPulseStatus();
-	local int breathingSpeed;
 	pulseS = getBreathingSpeed();
 	say("Pulse rate reading was: "$pulseR);
 	say("Pulse status was: "$pulseS);
