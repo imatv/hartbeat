@@ -19,8 +19,15 @@ simulated function PostBeginPlay()
 
 event PostRender()
 {
+    //local int i;
     //Call all the other PostRender stuff from GFxMovie
     super.PostRender();
+    
+    //if (HudMovie != none)
+    //{
+        // As long as we have a HUD, we call the TickHUD function on every tick.
+        HudMovie.TickHUD();
+    //}    
     
     //As long as the HUD is enabled, we want to draw it.
     if ( bShowHud && bEnableActorOverlays )

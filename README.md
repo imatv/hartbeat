@@ -10,6 +10,8 @@ Technologies Used:
 - Arduino (open-source physical computing platform: http://arduino.cc/ )
 - Visual Studio Express (IDE used for our C++ DLL development: http://visualstudio.com/ )
 - PulseSensor (Arduino heart rate monitor: http://pulsesensor.myshopify.com/ )
+- Adobe Photoshop (image manipulation suite)
+- Adobe Flash Professional (animation design suite)
 
 Technologies Planned:
 - Breath monitor for breathing-related mechanics (???)

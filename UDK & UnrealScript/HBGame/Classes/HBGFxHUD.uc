@@ -12,6 +12,28 @@ function Init( optional LocalPlayer LocPlay )
     Advance(0.f);
 }
 
+//Calls every tick; we set this up ourselves in the PostRender function in the HUD wrapper.
+function TickHUD()
+{
+    //Store the current player's info.
+    //local HBPlayerReplicationInfo HBRep;
+    local UTWeapon CurrentWeapon;
+
+    local float thisAmmoCount;
+    local float thisMaxAmmoCount;
+    
+    //Gets the player's replication info and weapon info.
+    //HBRep=HBPlayerReplicationInfo(GetPC().Pawn.PlayerReplicationInfo);
+    CurrentWeapon = UTWeapon(GetPC().Pawn.Weapon);
+
+    //Now that we HAVE the player's replication info, we can update the current variables to that which is stored in the replication info.
+    thisAmmoCount = CurrentWeapon.AmmoCount; 
+    thisMaxAmmoCount = CurrentWeapon.MaxAmmoCount;
+    
+    SetVariableNumber("current_ammo",thisAmmoCount); 
+    SetVariableNumber("max_ammo",thisMaxAmmoCount);
+}
+
 DefaultProperties
 {
     //The path to the swf asset
