@@ -17,7 +17,7 @@ extern "C"
 	DECLDIR void startReadingSerialData();
 	DECLDIR int getPulseRate();
 	DECLDIR int getPulseStatus();
-	DECLDIR int getBreathingSpeed();
+	DECLDIR int getBreathingForce();
 }
 
 // End the inclusion guard

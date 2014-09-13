@@ -13,7 +13,7 @@ int main()
 	while (true)
 	{
 		// Print results
-		cout << "Breathing Force: " << getBreathingSpeed() << endl;
+		cout << "Breathing Force: " << getBreathingForce() << endl;
 		cout << "Beats Per Minute: " << getPulseRate() << endl;
 		cout << "Pulse: " << getPulseStatus() << endl;
 		Sleep(100);
