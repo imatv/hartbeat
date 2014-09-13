@@ -16,7 +16,7 @@ using namespace std;
 HANDLE hSerial = CreateFile("COM8", GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
 
 // Global variables for easy access to our pulse and breathing data
-int breathingSpeed = -100, bpm = -100, pulse = -100;
+int breathingForce = -100, bpm = -100, pulse = -100;
 
 // Set DCB struct with our specific parameters
 void setupDCB(DCB &dcb)
@@ -67,7 +67,7 @@ void parseCommData(char* charArray)
 	string::size_type pos2 = line.find(',', pos1 + 1);
 
 	// Converts the specific substring into integers and stores them
-	breathingSpeed = atoi(line.substr(0, pos1).c_str());
+	breathingForce = atoi(line.substr(0, pos1).c_str());
 	bpm = atoi(line.substr(pos1 + 1, pos2).c_str());
 	pulse = atoi(line.substr(pos2 + 1).c_str());
 }
@@ -136,8 +136,8 @@ extern "C"
 	}
 
 	// Returns the breathing force
-	DECLDIR int getBreathingSpeed()
+	DECLDIR int getBreathingForce()
 	{
-		return breathingSpeed;
+		return breathingForce;
 	}
 }

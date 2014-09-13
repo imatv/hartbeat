@@ -1,4 +1,4 @@
-﻿Build started 9/13/2014 2:35:28 AM.
+﻿Build started 9/13/2014 8:32:27 AM.
      1>Project "D:\Documents\GitHub\Hartbeat\SerialReadingDLL\SerialReadingDLL\SerialReadingDLL\SerialReadingDLL.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(388,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SerialReadingDLL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
      1>ClCompile:
@@ -6,10 +6,11 @@
          SerialDLL.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Documents\GitHub\Hartbeat\SerialReadingDLL\SerialReadingDLL\Debug\SerialReader.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Documents\GitHub\Hartbeat\SerialReadingDLL\SerialReadingDLL\Debug\SerialReader.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Documents\GitHub\Hartbeat\SerialReadingDLL\SerialReadingDLL\Debug\SerialReader.lib" /MACHINE:X86 /DLL Debug\SerialDLL.obj
+         LINK : D:\Documents\GitHub\Hartbeat\SerialReadingDLL\SerialReadingDLL\Debug\SerialReader.dll not found or not built by the last incremental link; performing full link
             Creating library D:\Documents\GitHub\Hartbeat\SerialReadingDLL\SerialReadingDLL\Debug\SerialReader.lib and object D:\Documents\GitHub\Hartbeat\SerialReadingDLL\SerialReadingDLL\Debug\SerialReader.exp
          SerialReadingDLL.vcxproj -> D:\Documents\GitHub\Hartbeat\SerialReadingDLL\SerialReadingDLL\Debug\SerialReader.dll
      1>Done Building Project "D:\Documents\GitHub\Hartbeat\SerialReadingDLL\SerialReadingDLL\SerialReadingDLL\SerialReadingDLL.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.61
+Time Elapsed 00:00:02.81
