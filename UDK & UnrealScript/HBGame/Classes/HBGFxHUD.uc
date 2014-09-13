@@ -22,6 +22,9 @@ function TickHUD()
     local float thisAmmoCount;
     local float thisMaxAmmoCount;
     
+    local float thisHealth;
+    local float thisHealthMax;
+    
     //Gets the player's replication info and weapon info.
     //HBRep=HBPlayerReplicationInfo(GetPC().Pawn.PlayerReplicationInfo);
     CurrentWeapon = UTWeapon(GetPC().Pawn.Weapon);
@@ -30,8 +33,14 @@ function TickHUD()
     thisAmmoCount = CurrentWeapon.AmmoCount; 
     thisMaxAmmoCount = CurrentWeapon.MaxAmmoCount;
     
+    thisHealth = HBPawn(GetPC().Pawn).Health;
+    thisHealthMax = HBPawn(GetPC().Pawn).HealthMax;
+    
     SetVariableNumber("current_ammo",thisAmmoCount); 
     SetVariableNumber("max_ammo",thisMaxAmmoCount);
+    
+    SetVariableNumber("currentHealth",thisHealth);
+    SetVariableNumber("maxHealth",thisHealthMax);
 }
 
 DefaultProperties
