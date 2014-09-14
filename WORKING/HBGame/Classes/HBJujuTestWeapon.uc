@@ -2,7 +2,24 @@
 	New Test Weapon using our own weapon properties
 */
 
-class HBJujuTestWeapon extends HBWeapon;
+class HBJujuTestWeapon extends HBWeapon
+	DLLBind(SerialReader);
+	
+dllimport final function int getPulseRate();
+dllimport final function int getPulseStatus();
+
+function updateRadius()
+{
+	local int pulse;
+	pulse = getPulseRate();
+	scaleRadius(pulse);
+}
+
+function tick(float DeltaTime)
+{
+	updateRadius();
+	super.tick(DeltaTime);
+}
 
 defaultproperties
 {

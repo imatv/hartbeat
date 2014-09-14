@@ -2,35 +2,13 @@
 	Basic projectile to test the bullet spread
 */
 
-class HBProj_TestProjectile extends HBProjectile
-	DLLBind(SerialReader);
+class HBProj_TestProjectile extends HBProjectile;
     
 /**Variables*************************************/
 
 var vector ColorLevel;
 
 /**Functions*************************************/
-dllimport final function int getPulseRate();
-dllimport final function int getPulseStatus();
-    
-function Init(vector Direction)
-{
-	updateRadius();
-	super.Init(Direction);
-}
-
-function tick(float DeltaTime)
-{
-	updateRadius();
-	super.tick(DeltaTime);
-}
-
-function updateRadius()
-{
-	local int pulse;
-	pulse = getPulseRate();
-	scaleRadius(pulse);
-}
 
 simulated function ProcessTouch (Actor Other, vector HitLocation, vector HitNormal)
 {
