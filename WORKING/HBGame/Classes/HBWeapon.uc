@@ -17,6 +17,8 @@ var int ClipSize; //How much ammo the clip has
 
 var bool bIsReloading;
 
+var int previousPulseStatus;
+
 //Radius of spread of bullets
 var float spreadRadius;
 
@@ -62,14 +64,16 @@ simulated function PostBeginPlay()
 		SimpleCrosshairCoordinates = CustomCrosshairCoordinates;
 	}
 }
-function float scaleRadius(int BPM, int PulseStatus)
+function float scaleRadius(int BPM, int pulseStatus)
 {
+	if (pulseStatus == previousPulseStatus)
+	{
+		spreadRadius -= spreadRadius/10;
+		return;
+	}	
 	setNewRadius(BPM);
-	if(maxRadius - spreadRadius > 0)
-		spreadRadius = maxRadius;
-	if(PulseStatus == 0)
-		spreadRadius-=0.01;
-	spreadRadius += (maxRadius - spreadRadius)/15;
+	spreadRadius += (maxRadius - spreadRadius)/10;
+	previousPulseStatus =  pulseStatus;
 }
 
 function setNewRadius(int BPM)
@@ -654,6 +658,7 @@ defaultproperties
 	TotalAmmoCount=1
 	TotalDisplayCount=1	
  	bIsReloading = false
+	previousPulseStatus = 0;
 	clips = 1
 	ClipSize=1
 	spreadRadius = .1
