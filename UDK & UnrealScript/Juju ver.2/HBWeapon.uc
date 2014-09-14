@@ -301,6 +301,7 @@ function Reload()
 		else
 			AmmoCount += AmmoNeeded;
 	}
+	bisReloading = False;
 	DisplayAmmo();
 }
 
