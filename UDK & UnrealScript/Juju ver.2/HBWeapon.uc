@@ -9,6 +9,8 @@ class HBWeapon extends UTWeapon
 
 var int TotalAmmoCount; //How much ammo is left
 
+var int TotalDisplayCount; //The total amount of ammo that is displayed on the HUD
+
 var int clips; //How many clips the gun has
 
 var int ClipSize; //How much ammo the clip has
@@ -292,15 +294,14 @@ function Reload()
 		return;
 	else
 	{
-		PrintScreenDebug("Reloading Process Beginning");
 		AmmoNeeded = ClipSize - AmmoCount;
 		Diff = TotalAmmoCount - AmmoNeeded;
 		if (Diff < 0)
-			AmmoCount += TotalAmmoCount;
+			AmmoCount += (AmmoNeeded + Diff);
 		else
 			AmmoCount += AmmoNeeded;
 	}
-	bIsReloading = false;
+	DisplayAmmo();
 }
 
 simulated function StartFire(byte FireModeNum)
@@ -496,8 +497,12 @@ function bool DenyPickupQuery(class<Inventory> ItemClass, Actor Pickup)
 		}
 		return true;
 	}
-
 	return false;
+}
+
+function DisplayAmmo()
+{
+	return TotalDisplayCount = TotalAmmoCount - AmmoCount;
 }
 
 
@@ -544,7 +549,8 @@ simulated function AttachWeaponTo( SkeletalMeshComponent MeshCpnt, optional Name
 defaultproperties
 {
  	MaxAmmoCount=1
-	TotalAmmoCount=1	
+	TotalAmmoCount=1
+	TotalDisplayCount=1	
  	bIsReloading = false
 	clips = 1
 	ClipSize=1

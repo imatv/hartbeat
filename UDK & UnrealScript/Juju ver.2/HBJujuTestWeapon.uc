@@ -4,21 +4,7 @@
 
 class HBJujuTestWeapon extends HBWeapon;
 
-var float mySpread;
 
-simulated function rotator AddSpread(rotator BaseAim)
-{
-	local vector X, Y, Z;
-	local float RandY, RandZ;
-
-	mySpread = 0.1;
-	// Add in any spread.
-	GetAxes(BaseAim, X, Y, Z);
-	RandY = FRand() - 0.5;
-	RandZ = Sqrt(0.5 - Square(RandY)) * (FRand() - 0.5);
-	return rotator(X + RandY * mySpread * Y + RandZ * mySpread * Z);
-	
-}
 
 defaultproperties
 {
@@ -40,8 +26,8 @@ End Object
 
 InstantHitDamage(0)=20                       
 InstantHitDamage(1)=20
-FireInterval(0)=0.4
-FireInterval(1)=0.4
+FireInterval(0)=0.1
+FireInterval(1)=0.1
 
 WeaponFireSnd(0)=SoundCue'A_Character_CorruptEnigma_Cue.Mean_Efforts.A_Effort_EnigmaMean_PainSmall_Cue'               //  your sounds
 WeaponFireSnd(1)=SoundCue'A_Character_CorruptEnigma_Cue.Mean_Efforts.A_Effort_EnigmaMean_PainSmall_Cue'
@@ -63,6 +49,7 @@ ShotCost(1)=1
 MaxAmmoCount=36
 AmmoCount=6
 TotalAmmoCount=36
+TotalDisplayCount=30
 
 Clips=6
 ClipSize=6
