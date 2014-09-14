@@ -4,8 +4,6 @@
 
 class HBJujuTestWeapon extends HBWeapon;
 
-
-
 defaultproperties
 {
 Begin Object Class=AnimNodeSequence Name=MeshSequenceA

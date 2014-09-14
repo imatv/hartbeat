@@ -3,9 +3,10 @@
 */
 
 class HBProj_TestProjectile extends HBProjectile
-    DLLBind(SerialReader);
+	DLLBind(SerialReader);
 
-
+dllimport final function int getPulseRate();
+dllimport final function int getPulseStatus();
     
     
 /**Variables*************************************/
