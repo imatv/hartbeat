@@ -1,0 +1,1 @@
+class HBGameReplicationInfo extends UTGameReplicationInfo;
