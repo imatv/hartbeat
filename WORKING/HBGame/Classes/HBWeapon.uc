@@ -64,10 +64,12 @@ simulated function PostBeginPlay()
 }
 function float scaleRadius(int BPM, int PulseStatus)
 {
-	if(PulseStatus == 0)
-		return;
 	setNewRadius(BPM);
-	spreadRadius += (maxRadius - spreadRadius)/10;
+	if(maxRadius - spreadRadius > 0)
+		spreadRadius = maxRadius;
+	if(PulseStatus == 0)
+		spreadRadius-=0.01;
+	spreadRadius += (maxRadius - spreadRadius)/15;
 }
 
 function setNewRadius(int BPM)
