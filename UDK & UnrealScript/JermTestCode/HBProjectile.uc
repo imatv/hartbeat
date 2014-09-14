@@ -54,7 +54,11 @@ simulated function vector getDirection()
 }
 
 function Init(vector Direction)
-{	
+{
+	local vector Shot;
+	
+	SetRotation(rotator(Direction));
+	Shot = getDirection();
 	Velocity = Speed*Direction;
 	Acceleration = AccelRate*Normal(Direction);
 }
@@ -66,5 +70,5 @@ defaultproperties
 {
 	spreadRadius = 1.0
 	radiusScalar = 1.0
-	y = 0
+	y = 18.0
 }
