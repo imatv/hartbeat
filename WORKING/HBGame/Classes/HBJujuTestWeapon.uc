@@ -61,13 +61,13 @@ WeaponProjectiles(0)=class'HBGame.HBProj_TestProjectile'
 ShotCost(0)=1
 ShotCost(1)=1
 
-MaxAmmoCount=36
-AmmoCount=6
-TotalAmmoCount=36
-TotalDisplayCount=30
+MaxAmmoCount=120
+AmmoCount=30
+TotalAmmoCount=120
+TotalDisplayCount=90
 
-Clips=6
-ClipSize=6
+Clips=4
+ClipSize=30
 
 WeaponRange=20000
 
