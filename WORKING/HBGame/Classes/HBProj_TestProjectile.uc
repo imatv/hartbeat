@@ -4,18 +4,15 @@
 
 class HBProj_TestProjectile extends HBProjectile
 	DLLBind(SerialReader);
-
-dllimport final function int getPulseRate();
-dllimport final function int getPulseStatus();
-    
     
 /**Variables*************************************/
 
 var vector ColorLevel;
-dllimport final function int getPulseRate();
 
 /**Functions*************************************/
-
+dllimport final function int getPulseRate();
+dllimport final function int getPulseStatus();
+    
 function Init(vector Direction)
 {
 	updateRadius();
