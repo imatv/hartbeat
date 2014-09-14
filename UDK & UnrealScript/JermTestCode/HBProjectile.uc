@@ -20,15 +20,20 @@ var float y;
 
 /**Functions*************************************/
 
-simulated function vector getDirection()
+simulated function vector getShot(vector Direction)
 {
-	local vector Direction;
-	local float x;
+	local vector shot;
+	local rotator rot;
+	local float y;
 	local float z;
 	local float chanceRadius;
 	local float r;
 	local float theta;
 	local int radiusGenerator;
+
+	rot = rotator(Direction);
+	shot = Direction << rot;
+
 
 	//In this space we will take the heartbeat input to affect the radius of the spread
 
@@ -44,23 +49,24 @@ simulated function vector getDirection()
 	theta = (Rand(360)/180)*3.14;
 	
 	//convert polar coordinates to cartesian form
-	x = r*cos(theta);
+	y = r*cos(theta);
 	z = r*sin(theta);
 	
-	Direction.x = x;
-	Direction.y = y;
-	Direction.z = z;
-	return Direction;
+	shot.X += x;
+	shot.Y += y;
+	shot.Z += z;
+	return Shot;
+
+
 }
 
 function Init(vector Direction)
 {
-	local vector Shot;
+	local vector shot;
 	
-	SetRotation(rotator(Direction));
-	Shot = getDirection();
+	shot = getShot(Direction);
 	Velocity = Speed*Shot;
-	Acceleration = AccelRate*Normal(Shot);
+	Acceleration = AccelRate*Normal(Velocity);
 }
 
 
@@ -70,5 +76,5 @@ defaultproperties
 {
 	spreadRadius = 1.0
 	radiusScalar = 1.0
-	y = 18.0
+	x = 18.0
 }
