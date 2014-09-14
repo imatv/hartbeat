@@ -1,1 +1,1 @@
-class HBDamageType extend UTDamageType
+class HBDamageType extends UTDamageType;
