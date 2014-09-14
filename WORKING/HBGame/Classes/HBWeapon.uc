@@ -64,16 +64,17 @@ simulated function PostBeginPlay()
 		SimpleCrosshairCoordinates = CustomCrosshairCoordinates;
 	}
 }
-function float scaleRadius(int BPM, int pulseStatus)
+function scaleRadius(int BPM, int pulseStatus)
 {
-	if (pulseStatus == previousPulseStatus)
+	if (pulseStatus != previousPulseStatus)
 	{
-		spreadRadius -= spreadRadius/10;
+		maxRadius *= 0.9;
 		return;
-	}	
-	setNewRadius(BPM);
+	}else{	
+		setNewRadius(BPM);
+	}
 	spreadRadius += (maxRadius - spreadRadius)/10;
-	previousPulseStatus =  pulseStatus;
+	previousPulseStatus = pulseStatus;
 }
 
 function setNewRadius(int BPM)
