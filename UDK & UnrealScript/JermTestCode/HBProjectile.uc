@@ -14,21 +14,23 @@ var float spreadRadius;
 //Multiplier to increase/decrease radius of spread
 var float radiusScalar;
 
-//Distance from origin to reference spread circle
-var float y;
-
 
 /**Functions*************************************/
 
-simulated function vector getDirection()
+simulated function rotator getShot(vector Direction)
 {
-	local vector Direction;
-	local float x;
-	local float z;
+	local vector shot, X, Y, Z;
+	local rotator rotor, turnyyy;
+	local float ry;
+	local float rz;
 	local float chanceRadius;
 	local float r;
 	local float theta;
 	local int radiusGenerator;
+
+	rotor = rotator(Direction);
+	GetAxes(rotor, X, Y, Z);
+
 
 	//In this space we will take the heartbeat input to affect the radius of the spread
 
@@ -40,38 +42,27 @@ simulated function vector getDirection()
 		chanceRadius = 0.75*spreadRadius;
 
 	//randomly select polar coordinates for the bullet to travel bounded by the radius of spread
-	r = (Rand(11)/10.0)*chanceRadius;
-	theta = (Rand(360)/180)*3.14;
+	r = (Rand(10)/(10.0))*chanceRadius;
+	theta = (Rand(360)/(180.0))*(3.14);
 	
 	//convert polar coordinates to cartesian form
-	x = r*cos(theta);
-	z = r*sin(theta);
-	
-//	Direction.x = x;
-//	Direction.y = y;
-//	Direction.z = z;
-		
-	Direction.x = 1;
-	Direction.y = 1;
-	Direction.z = 1;
-	return Direction;
+	ry = r*cos(theta);
+	rz = r*sin(theta);
+	turnyyy = rotator(X + ry*Y + rz*Z);
+	return turnyyy;
+
+
 }
 
 function Init(vector Direction)
 {
-	local vector Shot;
+	local vector shot;
 	
-	//SetRotation(rotator(Direction));
-	Shot = Direction;
+	SetRotation(rotator(Direction));
+
+	shot = vector(getShot(Direction));
 	Velocity = Speed*Shot;
-	Acceleration = AccelRate*Normal(Shot);
-}
-function PrintScreenDebug(string debugText)
-{
- 	local PlayerController PC;
- 	PC = PlayerController(Pawn(Owner).Controller);
- 	if (PC != None)
- 	PC.ClientMessage("HBWeapon: " $ debugText);
+	Acceleration = AccelRate*Normal(Direction);
 }
 
 
@@ -79,7 +70,6 @@ function PrintScreenDebug(string debugText)
 
 defaultproperties
 {
-	spreadRadius = 1.0
+	spreadRadius = 0.1
 	radiusScalar = 1.0
-	y = 18.0
 }
