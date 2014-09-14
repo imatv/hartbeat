@@ -11,8 +11,10 @@ dllimport final function int getPulseStatus();
 function updateRadius()
 {
 	local int pulse;
+	local int pulseStatus;
 	pulse = getPulseRate();
-	scaleRadius(pulse);
+	pulseStatus = getPulseStatus();
+	scaleRadius(pulse, pulseStatus);
 }
 
 function tick(float DeltaTime)

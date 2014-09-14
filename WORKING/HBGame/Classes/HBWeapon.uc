@@ -17,12 +17,15 @@ var int ClipSize; //How much ammo the clip has
 
 var bool bIsReloading;
 
+var int previousPulseStatus;
+
 //Radius of spread of bullets
 var float spreadRadius;
 
 //Multiplier to increase/decrease radius of spread
 var float radiusScalar;
 
+var float maxRadius;
 /*********************************************************************************************
  * Initialization / System Messages / Utility
  *********************************************************************************************/
@@ -61,39 +64,52 @@ simulated function PostBeginPlay()
 		SimpleCrosshairCoordinates = CustomCrosshairCoordinates;
 	}
 }
-function float scaleRadius(int BPM)
+function scaleRadius(int BPM, int pulseStatus)
 {
-	if (BPM >= 75 && BPM <= 85)
+	if (pulseStatus != previousPulseStatus)
 	{
-		spreadRadius = 0.1;
+		maxRadius *= 0.9;
+		return;
+	}else{	
+		setNewRadius(BPM);
+	}
+	spreadRadius += (maxRadius - spreadRadius)/10;
+	previousPulseStatus = pulseStatus;
+}
+
+function setNewRadius(int BPM)
+{
+if (BPM >= 75 && BPM <= 85)
+	{
+		maxRadius = 0.1;
 	}
 	else if (BPM > 85 && BPM <= 100)
 	{
-		spreadRadius = 0.2;
+		maxRadius = 0.2;
 	}
 	else if (BPM > 100 && BPM <= 115)
 	{
-		spreadRadius = 0.4;
+		maxRadius = 0.4;
 	}
 	else if (BPM > 115 && BPM <= 130)
 	{
-		spreadRadius = 0.8;
+		maxRadius = 0.8;
 	}
 	else if (BPM > 130 && BPM <= 150)
 	{
-		spreadRadius = 1.6;
+		maxRadius = 1.6;
 	}
 	else if (BPM > 150)
 	{
-		spreadRadius = 3.2;
+		maxRadius = 3.2;
 	}
 	else if (BPM < 75 && BPM >= 60)
 	{
-		spreadRadius = 0.05;
+		maxRadius = 0.05;
 	}
 	else if (BPM < 60)
 	{
-		spreadRadius = 0.025;
+		maxRadius = 0.025;
 	}
 }
 
@@ -643,6 +659,7 @@ defaultproperties
 	TotalAmmoCount=1
 	TotalDisplayCount=1	
  	bIsReloading = false
+	previousPulseStatus = 0;
 	clips = 1
 	ClipSize=1
 	spreadRadius = .1
