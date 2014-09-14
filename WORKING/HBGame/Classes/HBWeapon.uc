@@ -463,6 +463,7 @@ function int AddAmmo( int Amount )
 function int AddTotalAmmo( int Amount )
 {
 	TotalAmmoCount = Clamp(TotalAmmoCount + Amount,0,MaxAmmoCount);
+    DisplayAmmo();
 	return TotalAmmoCount;
 }
  
