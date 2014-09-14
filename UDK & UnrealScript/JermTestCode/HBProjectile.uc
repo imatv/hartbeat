@@ -59,8 +59,8 @@ function Init(vector Direction)
 	
 	SetRotation(rotator(Direction));
 	Shot = getDirection();
-	Velocity = Speed*Direction;
-	Acceleration = AccelRate*Normal(Direction);
+	Velocity = Speed*Shot;
+	Acceleration = AccelRate*Normal(Shot);
 }
 
 
