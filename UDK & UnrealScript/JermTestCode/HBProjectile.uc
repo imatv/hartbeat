@@ -15,7 +15,7 @@ var float spreadRadius;
 var float radiusScalar;
 
 //Distance from origin to reference spread circle
-var float z;
+var float y;
 
 
 /**Functions*************************************/
@@ -24,7 +24,7 @@ simulated function vector getDirection()
 {
 	local vector Direction;
 	local float x;
-	local float y;
+	local float z;
 	local float chanceRadius;
 	local float r;
 	local float theta;
@@ -45,7 +45,7 @@ simulated function vector getDirection()
 	
 	//convert polar coordinates to cartesian form
 	x = r*cos(theta);
-	y = r*sin(theta);
+	z = r*sin(theta);
 	
 	Direction.x = x;
 	Direction.y = y;
@@ -53,14 +53,9 @@ simulated function vector getDirection()
 	return Direction;
 }
 
-
 function Init(vector Direction)
 {	
-	Direction = getDirection();
-	SetRotation(rotator(Direction));
-	
 	Velocity = Speed*Direction;
-	Velocity.Z += TossZ;
 	Acceleration = AccelRate*Normal(Direction);
 }
 
@@ -71,5 +66,5 @@ defaultproperties
 {
 	spreadRadius = 1.0
 	radiusScalar = 1.0
-	z = -18.0
+	y = 0
 }
