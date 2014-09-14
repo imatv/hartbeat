@@ -23,6 +23,7 @@ var float spreadRadius;
 //Multiplier to increase/decrease radius of spread
 var float radiusScalar;
 
+var float maxRadius;
 /*********************************************************************************************
  * Initialization / System Messages / Utility
  *********************************************************************************************/
@@ -61,39 +62,47 @@ simulated function PostBeginPlay()
 		SimpleCrosshairCoordinates = CustomCrosshairCoordinates;
 	}
 }
-function float scaleRadius(int BPM)
+function float scaleRadius(int BPM, int PulseStatus)
 {
-	if (BPM >= 75 && BPM <= 85)
+	if(PulseStatus == 0)
+		return;
+	setNewRadius(BPM);
+	spreadRadius += (maxRadius - spreadRadius)/10;
+}
+
+function setNewRadius(int BPM)
+{
+if (BPM >= 75 && BPM <= 85)
 	{
-		spreadRadius = 0.1;
+		maxRadius = 0.1;
 	}
 	else if (BPM > 85 && BPM <= 100)
 	{
-		spreadRadius = 0.2;
+		maxRadius = 0.2;
 	}
 	else if (BPM > 100 && BPM <= 115)
 	{
-		spreadRadius = 0.4;
+		maxRadius = 0.4;
 	}
 	else if (BPM > 115 && BPM <= 130)
 	{
-		spreadRadius = 0.8;
+		maxRadius = 0.8;
 	}
 	else if (BPM > 130 && BPM <= 150)
 	{
-		spreadRadius = 1.6;
+		maxRadius = 1.6;
 	}
 	else if (BPM > 150)
 	{
-		spreadRadius = 3.2;
+		maxRadius = 3.2;
 	}
 	else if (BPM < 75 && BPM >= 60)
 	{
-		spreadRadius = 0.05;
+		maxRadius = 0.05;
 	}
 	else if (BPM < 60)
 	{
-		spreadRadius = 0.025;
+		maxRadius = 0.025;
 	}
 }
 

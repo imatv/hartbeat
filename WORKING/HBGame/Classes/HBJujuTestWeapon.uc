@@ -12,7 +12,9 @@ function updateRadius()
 {
 	local int pulse;
 	pulse = getPulseRate();
-	scaleRadius(pulse);
+	local int pulseStatus;
+	status = getPulseStatus();
+	scaleRadius(pulse, status);
 }
 
 function tick(float DeltaTime)
