@@ -20,20 +20,15 @@ var float y;
 
 /**Functions*************************************/
 
-simulated function vector getShot(vector Direction)
+simulated function vector getDirection()
 {
-	local vector shot;
-	local rotator rot;
-	local float y;
+	local vector Direction;
+	local float x;
 	local float z;
 	local float chanceRadius;
 	local float r;
 	local float theta;
 	local int radiusGenerator;
-
-	rot = rotator(Direction);
-	shot = Direction << rot;
-
 
 	//In this space we will take the heartbeat input to affect the radius of the spread
 
@@ -49,24 +44,34 @@ simulated function vector getShot(vector Direction)
 	theta = (Rand(360)/180)*3.14;
 	
 	//convert polar coordinates to cartesian form
-	y = r*cos(theta);
+	x = r*cos(theta);
 	z = r*sin(theta);
 	
-	shot.X += x;
-	shot.Y += y;
-	shot.Z += z;
-	return Shot;
-
-
+//	Direction.x = x;
+//	Direction.y = y;
+//	Direction.z = z;
+		
+	Direction.x = 1;
+	Direction.y = 1;
+	Direction.z = 1;
+	return Direction;
 }
 
 function Init(vector Direction)
 {
-	local vector shot;
+	local vector Shot;
 	
-	shot = getShot(Direction);
+	//SetRotation(rotator(Direction));
+	Shot = Direction;
 	Velocity = Speed*Shot;
-	Acceleration = AccelRate*Normal(Velocity);
+	Acceleration = AccelRate*Normal(Shot);
+}
+function PrintScreenDebug(string debugText)
+{
+ 	local PlayerController PC;
+ 	PC = PlayerController(Pawn(Owner).Controller);
+ 	if (PC != None)
+ 	PC.ClientMessage("HBWeapon: " $ debugText);
 }
 
 
@@ -76,5 +81,5 @@ defaultproperties
 {
 	spreadRadius = 1.0
 	radiusScalar = 1.0
-	x = 18.0
+	y = 18.0
 }
