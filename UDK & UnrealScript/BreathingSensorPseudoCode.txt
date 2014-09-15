@@ -1,0 +1,121 @@
+////////////
+Actual Code (Now removed from DLL since we currently don't plan on using it
+
+// Length of time interval that we want to analyze
+int timeInterval = 3000;
+// Number of indexes that our breathing data array will have based on the amount of time of data we want to store
+// (200 in this case is the delay between each reading)
+int totalIndexes = timeInterval / 200;
+// Declare array that will hold breathing data collected in the past timeInterval
+int breathingData[150];
+// Integer that will tell us at what point of the breathing data collection we are at
+int index = 0;
+
+
+DWORD WINAPI analyzeBreathingData(LPVOID lpParam)
+{
+	// Calculate the average of our current breathing data
+	int total = 0;
+	for (int ind = 0; ind < totalIndexes; ind++)
+		total += breathingData[ind];
+	int average = total / totalIndexes;
+
+	// Calc if wave starts from above
+	boolean above = (breathingData[0] > average);
+
+	// variable to store breathing speed
+	int tempBreathingSpeed = 0;
+
+	// store what the last index was when a breath was counted so that we don't count breaths too frequently
+	int lastChangeIndex = -2;
+
+	// Loop through array
+	for (int ind = 0; ind < totalIndexes; ind++)
+	{
+		// If the current index crosses the average and the last counted breath was not very recent, count a breath
+		if (((above && breathingData[ind] < average) || (!above && breathingData[ind] > average)) && lastChangeIndex < (ind-4))
+		{
+			tempBreathingSpeed++;
+			lastChangeIndex = ind;
+			above != above;
+		}
+	}
+
+	// Update breathing speed data
+	breathingSpeed = tempBreathingSpeed;
+
+	return 1;
+}
+
+// Stores the data parsed from the breathing sensor
+void addBreathingForceData(int breath)
+{
+	// If the breathing sensor data is not valid, the function does not store it
+	if (breath < 0)
+		return;
+
+	// Stores the breathing sensor data
+	breathingData[index%totalIndexes] = breath;
+
+	// Checks if the array is full
+	if (index%totalIndexes == (totalIndexes - 1))
+	{
+		//Create thread to analyze data
+		CreateThread(
+			NULL,                   // default security attributes
+			0,                      // use default stack size  
+			analyzeBreathingData,       // thread function name
+			NULL,          // argument to thread function 
+			0,                      // use default creation flags 
+			NULL);
+	}
+
+	index++;
+}
+
+Create an array (lets call it fsr) with 100 (or (time interval in ms)/(delay in ms between each response)) indexes 
+Since the sensor provides data at a fixed frequency, this array measures a fixed amount of time (5 second if using the calculation above).
+
+int i = 0;
+
+int totalIndexes = 100;
+
+Code in loop which is repeatedly called to get data from sensors
+-------------------
+// Store data into array until we have enough data for analysis
+fsr[i%totalIndexes] = dataFromSensor()
+if(i%totalIndexes==(totalIndexes-1))
+	analyzeData()
+i++
+-------------------
+
+function analyzeData()
+
+// Calc average
+int total = 0;
+	for(int ind = 0; ind < totalIndexes; ind++)
+		total += fsr[ind];
+int average = total/totalIndexes;
+
+// Calc if wave starts from above
+boolean above = (fsr[0] > average);
+
+// variable to store breathing speed
+breath= 0;
+
+// store what the last index was when a breath was counted so that we don't count breaths too frequently
+int lastChangeIndex = 0;
+
+// Loop through array
+	for(int ind = 0; ind < totalIndexes; ind++)
+	{
+		// If the current index crosses the average and the last counted breath was not very recent, count a breath
+		if(((above && fsr[ind] < average) || (!above && fsr[ind] > average) ) && lastChangeIndex < (ind-4)%totalIndexes)
+		{
+			breath++;
+			above != above;
+		}
+	}
+
+
+

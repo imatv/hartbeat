@@ -1,17 +1,18 @@
 Hartbeat
 ========
-Idea for Alpha Game Jam.  
+Original idea for Alpha Game Jam. Now an ongoing project. 
 
-Original concept by Ethan Harte, Alvin Vuong, Jeremy Rotman, Vipul Kashyap, and Julian Carney.
+Original Concept by: Ethan Harte, Alvin Vuong, Jeremy Rotman, Vipul Kashyap, and Julian Carney.  
+Contributors: Jose
 
 Technologies Used:
-- UDK (professional 3D engine/toolset for game development: https://www.udk.com/ )
-- Blender (open-source 3D animation suite: http://www.blender.org/ )
-- Arduino (open-source physical computing platform: http://arduino.cc/ )
-- Visual Studio Express (IDE used for our C++ DLL development: http://visualstudio.com/ )
-- PulseSensor (Arduino heart rate monitor: http://pulsesensor.myshopify.com/ )
-- Adobe Photoshop (image manipulation suite)
-- Adobe Flash Professional (animation design suite)
+- UDK (professional 3D engine/toolset for game development: https://www.udk.com )
+- Blender (open-source 3D animation suite: http://www.blender.org )
+- Arduino (open-source physical computing platform: http://arduino.cc )
+- Visual Studio Express (IDE used for our C++ DLL development: http://visualstudio.com )
+- PulseSensor (Arduino heart rate monitor: http://pulsesensor.myshopify.com )
+- Adobe Photoshop (raster graphics editor: http://www.adobe.com/products/photoshop )
+- Adobe Flash Professional (multimedia authoring program: http://www.adobe.com/products/flash )  
 
 Technologies Planned:
 - Breath monitor for breathing-related mechanics (???)

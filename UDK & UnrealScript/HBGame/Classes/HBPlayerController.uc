@@ -6,6 +6,31 @@
 class HBPlayerController extends UTPlayerController
     dependson(HBPawn);
 
+var float reticleSpreadRadius;
+
+function HBSpreadRadiusUpdate(float radius)
+{
+	reticleSpreadRadius = radius;
+}
+
+exec function HBRequestReload()
+{
+	local HBWeapon hbwp;
+	local int TotAmmoCt;
+	hbwp = HBWeapon(Pawn.Weapon);
+
+	if(hbwp != none)
+	{	
+		TotAmmoCt = hbwp.TotalAmmoCount;
+
+		if(TotAmmoCt > 0 && !hbwp.bIsReloading && hbwp.AmmoCount != hbwp.ClipSize)
+		{
+			hbwp.bIsReloading = true;
+			hbwp.SetTimer(2.5, false, 'Reload');
+		}
+	}
+}
+
 /*
     
 var bool HBbIsSprinting;
@@ -49,4 +74,5 @@ state HBPlayerSpeedChange
 
 defaultproperties
 {
+	reticleSpreadRadius = 0.0;
 }

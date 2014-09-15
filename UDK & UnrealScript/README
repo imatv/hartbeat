@@ -1,30 +1,41 @@
-UDK Settings/DefaultInput.ini
-UDK Settings/DefaultEngine.ini
-UDK Settings/DefaultGame.ini
- = UDK/UDK-2014-05/UDKGame/Config
- 
-UDK Settings/hd_hud.upk
-UDK Settings/Tutorial9.upk
- = UDK/UDK-2014-05/UDKGame/Content
- 
-hb_hud Folder
+'hb_hud' Folder
  = UDK/UDK-2014-05/UDKGame/Flash
  
-HBGame Folder
+'HBGame' Folder
  = UDK/UDK-2014-05/Development/Src
+
+Contents of 'Maps' Folder
+ = UDK/UDK-2014-05/UDKGame/Content/Maps
+ 
+Contents of 'Packages' Folder
+ = UDK/UDK-2014-05/UDKGame/Content
+ 
+Contents of 'UDK Default Settings' Folder
+ = UDK/UDK-2014-05/UDKGame/Config
+
 
 ***************************IMPORTANT*****************************
 
 Place files in given path. Replace old versions.
-Delete both UDKInput.ini and UDKGame.ini, then run the editor.
-The engine will generate new UDK files from DefaultInput with 
-the new keybindings.
 
-Place folders in respective path. Run the editor and compile the 
-scripts.  Then when in the editor, under View -> World Properties
-change game type fields (there are two) to HBGame.  Now scripts 
-should work.
+To get default settings to work, delete the UDK built versions of 
+those same files, then run the editor. The engine will generate 
+new UDK files with those new settings.
+
+Running the editor will also compile the scripts. Then when in 
+the editor, under View -> World Properties, change game type
+fields (there are two) to HBGame.  Now scripts should work.
 
 Also when in the editor, make sure to open content browser and 
-reload the flash .swf file.
+reload the flash .swf file and check packages. This will properly 
+load the HUD.
+
+In the Compile.bat and Compile2.bat files, it is possible to edit 
+them to open up other maps as well.
+
+Make sure that for DLL testing, you must compile the DLL and move 
+it to the following path:
+ = UDK/UDK-2014-05/Binaries/Win32/UserCode
+Then use the Compile.bat file to compile the scripts and run the 
+game.
 *****************************************************************

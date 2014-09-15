@@ -3,38 +3,49 @@
 This is where we put descriptions of major changes made to the repository.
 This is also where we put our TODO's for next steps needed to be done.
 
-Note: In UDK, must set game type (Default and PIE) to "HBGame"
+Note: In UDK Editor, must set game type (Default and PIE) to "HBGame"
 
 Currently...
-- UDK Map Creation
-    Alvin
-    Ethan
 - UnrealScript Game Logic
     Alvin
     Ethan
     Julian
-    ***HELP US PLS. PLSERONI.***
-- Flash Actionscript HUD Design and Functionality
+    Jeremy
+    Vipul
+- UDK Map Creation
     Alvin
+    Ethan
+- Flash Actionscript HUD Functionality
+    Alvin
+- Adobe Photoshop HUD Design
     Ethan
 - Blender 3D Graphics
     Jeremy
 - Maya 3D Graphics
     Jose
-- Arduino PulseSensor Heartrate/Breathing Monitors
+- Arduino Heartrate/Breathing Monitors
     Ethan
 - DLL Binding
-    Ethan
     Vipul
-- Adobe Photoshop
-    Ethan
-    Alvin
 
-TODO: Get heartrate data to integrate with UnrealScript code.
-TODO: Crosshair based on heartrate in HUD.
-TODO: Gun bullet spread based on heartrate data.
-TODO: Finish HUD design.
-TODO: Breathing mechanics in game.
+TODO: Smooth out the heart rate pulse in UnrealScript.
+TODO: Finish HUD design. (Bullet images)
+TODO: Make an animated mask to not scale health bar, but mask a part of it, upon damage.
+TODO: Make picking up guns a HUD element and key binding (to 'E'?)
+TODO: Customize gun animations and modeling. (Rifle)
+TODO: Get first level of game to work. (Fix crash upon loading a new level)
+TODO: Implement breathing data.
+---------------------------------------------------------------------------------------------------------------------
+9/15/2014 7:45 AM PST (PUSHED TO GITHUB)
+
+Implemented polar to cartesian mapping for randomizing the direction of bullet spread.
+Gun bullet spread is now based on heart rate BPM, using ranges of values.
+HUD now takes in the spread value and displays the current spread radius.
+First level map design for demo.
+Picking up ammo now updates the display of excess ammo correctly on HUD.
+DLL-Binding is placed in necessary files.
+Cleaned up repository with up-to-date code.
+Successful Demo! Good job guys!
 ---------------------------------------------------------------------------------------------------------------------
 9/13/2014 11:14 AM PST (PUSHED TO GITHUB)
 
