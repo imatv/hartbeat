@@ -1,4 +1,4 @@
-﻿Update Log.txt
+Update Log.txt
 
 This is where we put descriptions of major changes made to the repository.
 This is also where we put our TODO's for next steps needed to be done.
@@ -35,6 +35,10 @@ TODO: Make picking up guns a HUD element and key binding (to 'E'?)
 TODO: Customize gun animations and modeling. (Rifle)
 TODO: Get first level of game to work. (Fix crash upon loading a new level)
 TODO: Implement breathing data.
+---------------------------------------------------------------------------------------------------------------------
+9/16/2014 12:20 AM PST (PUSHED TO GITHUB)
+
+Congratulations, we have reached 200 commits. This means nothing really, but it does mean we’ve done a lot of fucking work. Good job everybody! :D
 ---------------------------------------------------------------------------------------------------------------------
 9/15/2014 7:45 AM PST (PUSHED TO GITHUB)
 
