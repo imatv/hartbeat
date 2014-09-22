@@ -3,7 +3,7 @@ Hartbeat
 Original idea for Alpha Game Jam. Now an ongoing project. 
 
 Original Concept by: Ethan Harte, Alvin Vuong, Jeremy Rotman, Vipul Kashyap, and Julian Carney.  
-Contributors: Jose
+Contributors: Jose Mayo (3D Artist)
 
 Technologies Used:
 - UDK (professional 3D engine/toolset for game development: https://www.udk.com )
