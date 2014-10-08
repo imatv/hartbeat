@@ -1,6 +1,6 @@
 Hartbeat
 ========
-**Original idea for Alpha Game Jam. Now an ongoing project. **
+Original idea for Alpha Game Jam. Now an ongoing project.  
 
 **Original Concept by:** Ethan Harte, Alvin Vuong, Jeremy Rotman, Vipul Kashyap, and Julian Carney.  
 **Contributors:** Jose Mayo (3D Artist)
@@ -11,7 +11,7 @@ Hartbeat
 
 *Thus, we decided to implement a player's actual bodily reactions within the game world itself. Using an optical heart rate* *monitor wired up to an Arduino, we gathered heart rate information and, in-game, varied the spread radius accordingly. In the* *future, we also plan to use a force sensor with an elastic belt to detect breathing and implementing this in-game as well.*  
 
-Technologies Used:
+**Technologies Used:**
 - UDK (professional 3D engine/toolset for game development: https://www.udk.com )
 - Blender (open-source 3D animation suite: http://www.blender.org )
 - Arduino (open-source physical computing platform: http://arduino.cc )
@@ -20,14 +20,14 @@ Technologies Used:
 - Adobe Photoshop (raster graphics editor: http://www.adobe.com/products/photoshop )
 - Adobe Flash Professional (multimedia authoring program: http://www.adobe.com/products/flash )  
 
-Technologies Planned:
-- Breath monitor for breathing-related mechanics (???)
+**Technologies Planned:**
+- Breath monitor for breathing-related mechanics using a force sensor
 - Emotiv EPOC for ??? (neuroheadset & SDK provided by Emotiv: http://emotiv.com/ )
 
-Texture Libraries:  
+**Texture Libraries:**  
 *(Note: Any texture used is packaged along with the models/maps that include it.)*
 - http://opengameart.org/textures/all
 - http://www.cgtextures.com/
 
-Special Thanks to Matthew at Michigan State University for his tutorials on UDK Game Development.
+**Special Thanks** to Matthew at Michigan State University for his tutorials on UDK Game Development.
 - https://www.youtube.com/watch?v=vgSUbmKOX24
