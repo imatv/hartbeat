@@ -35,6 +35,7 @@ TODO: Make picking up guns a HUD element and key binding (to 'E'?)
 TODO: Customize gun animations and modeling. (Rifle)
 TODO: Get first level of game to work. (Fix crash upon loading a new level)
 TODO: Implement breathing data.
+TODO: Found a bug in ammo count. Bottom limitless. Negative ammo count shown.
 ---------------------------------------------------------------------------------------------------------------------
 9/16/2014 12:20 AM PST (PUSHED TO GITHUB)
 
