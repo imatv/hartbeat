@@ -1,6 +1,6 @@
 Hartbeat
 ========
-Original idea for Alpha Game Jam. Now an ongoing project.  
+Original idea for Alpha Game Jam.
 
 **Original Concept by:** Ethan Harte, Alvin Vuong, Jeremy Rotman, Vipul Kashyap, and Julian Carney.  
 **Contributors:** Jose Mayo (3D Artist)
